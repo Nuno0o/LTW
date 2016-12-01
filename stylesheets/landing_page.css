@@ -1,0 +1,160 @@
+/*
+	---------------------------------------------------------------------
+	------------------------ LANDING PAGE STYLESHEET --------------------
+	---------------------------------------------------------------------
+*/
+
+body {
+	background-color: white;
+	color: black;
+}
+
+
+#page_header{
+	display: block;
+	border-bottom: 3px solid gray;
+	padding-bottom: 250px;
+	font-family: 'Oswald', sans-serif; 
+}
+/*
+	----------------------------- TOP IMAGE -----------------------------
+*/
+img {
+	width: auto;
+	padding-top:20px;
+	padding-left:25px;
+}
+
+#stock_img {
+	position:absolute;
+	float:left;
+}
+
+/*
+	---------------------------- LOGIN AREA -----------------------------
+*/
+
+#login_area *{
+	position:absolute;
+}
+#username_label { 
+	left:1180px;
+	top:105px;
+}
+#username_input{ 
+	left:1250px;
+	top:105px;
+}
+#password_label{
+	left:1180px;
+	top:130px;
+}
+#password_input{
+	left:1250px;
+	top:130px; 
+}
+#login_btn{
+	left:1320px;
+	top:155px;
+}
+
+/*
+	------------------------------- ABOUT -------------------------------
+*/
+#about{
+	position:absolute;
+
+	display:inline-block;
+
+	/*
+			--- TEMP DIS---
+	*/
+	top:1000px;
+
+	width: 99%;
+
+	border-top:solid gray;
+
+	text-align:center;
+	font-family: 'Oswald', sans-serif; 
+}
+
+#about p{
+	margin-top:0;
+	margin-bottom:0;
+
+	padding-left: 80px;
+
+	display:inline-block;
+}
+
+#about p:after{
+	content: '/';
+	padding-left: 80px;
+}
+
+
+#about p:first-child:before{
+	content: '/';
+	padding-right:80px;
+}
+
+/*
+	-------------------------- SEARCH AREA ------------------------------
+*/
+
+#main_body{
+	display:inline-block;
+}
+
+#search_area{
+	position:absolute;
+
+	margin-left:25px;
+	margin-top:20px;
+
+	width:400px;
+
+	/*
+		TODO
+	*/
+	height:675px;
+
+	padding-left:20px;
+	padding-right:20px;
+
+	border: 0.5px solid gray;
+}
+
+#search_area p{
+	font-family:'Oswald', sans-serif; 
+}
+
+/*
+	------------------------- LATEST REVIEWS ---------------------------
+*/
+#marker{
+	position: absolute;
+
+	left: 488px;
+	margin-top:10px;
+
+	/*
+		TODO
+	*/
+	height:690px;
+
+	border: 3px solid #4d4d4d;
+}
+
+#latest_reviews{
+	position:absolute;
+
+	left: 500px;
+	width: 65%;
+
+	margin-top:20px;
+
+	padding-left:20px;
+	padding-right:20px;
+}
