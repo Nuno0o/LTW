@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS user;
 CREATE TABLE user(
 	username VARCHAR(16) PRIMARY KEY NOT NULL,
-	password VARCHAR(16) NOT NULL,
-	email VARCHAR(254),
+	password VARCHAR(100) NOT NULL,
+	email VARCHAR(254) NOT NULL,
 	name VARCHAR(100),
 	birth DATE,
 	city VARCHAR(50),
