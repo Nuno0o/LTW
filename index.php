@@ -24,7 +24,8 @@
 				</form>
 				<?php else:?>
 				<form action="php/logout.php" method="post">
-					<input id="logout_btn" type="submit" value="Logout">
+					<label id="user_name"><?php echo $_SESSION['username']; ?></label>
+					<input id="login_btn" type="submit" value="Logout">
 				</form>
 				<?php endif;?>
 			</div>
