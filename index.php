@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<?php session_start(); ?>
 <html>
 	<head>
 		<title>Restaurant Reviewer</title>
@@ -12,11 +14,19 @@
 				<img src="./resources/restaurant_stock.jpg" alt="Restaurant Stock Photo">
 			</div>
 			<div id="login_area">
-				<label id="username_label">Username</label>
-				<input id="username_input" name="username_input" type="text">
-				<label id="password_label">Password</label>
-				<input id="password_input" name="password_input" type="text">
-				<input id="login_btn" type="button" value="Login">
+				<?php if(!isset($_SESSION['username'])):?>
+				<form action="php/login.php" method="post">
+					<label id="username_label">Username</label>
+					<input id="username_input" name="username_input" type="text">
+					<label id="password_label">Password</label>
+					<input id="password_input" name="password_input" type="password">
+					<input id="login_btn" type="submit" value="Login">
+				</form>
+				<?php else:?>
+				<form action="php/logout.php" method="post">
+					<input id="logout_btn" type="submit" value="Logout">
+				</form>
+				<?php endif;?>
 			</div>
 		</div>
 		<div id="about">
