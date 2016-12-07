@@ -6,7 +6,8 @@ CREATE TABLE user(
 	name VARCHAR(100),
 	birth DATE,
 	city VARCHAR(50),
-	country VARCHAR(50)
+	country VARCHAR(50),
+	description VARCHAR(256)
 );
 
 DROP TABLE IF EXISTS review;

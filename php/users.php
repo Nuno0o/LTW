@@ -11,6 +11,36 @@
         return $stmt->fetch();
     }
 
+    function changeUserPassword($dbh,$user,$password){
+        $stmt = $dbh->prepare('UPDATE user SET password = ? WHERE username = ?');
+        $stmt->execute(array(md5($password),$user));
+
+        return $stmt->rowCount() ? true : false;
+    }
+
+    function changeUserEmail($dbh,$user,$email){
+        $stmt = $dbh->prepare('UPDATE user SET email = ? WHERE username = ?');
+        $stmt->execute(array($email,$user));
+
+        return $stmt->rowCount() ? true : false;
+    }
+
+    function searchUsers($dbh,$string){
+        $stmt = $dbh->prepare('SELECT * FROM user WHERE username LIKE \'%?%\' OR email LIKE \'%?%\'');
+        $stmt->execute(array($string,$string));
+
+        return $stmt->fetchAll();
+    }
+
+    function addDescription($dbh,$user,$description){
+        $stmt = $dbh->prepare('UPDATE user SET description = ? WHERE user = ?');
+        $stmt->execute(array($description,$user));
+
+        return $stmt->rowCount() ? true : false;
+    }
+
+    
+    
     function populate_database($dbh){
   newUser($dbh,"user1","1234","quam@duilectus.ca","Austin Willis","1995-05-01","Kalisz","Micronesia");
   newUser($dbh,"user2","1234","interdum.Nunc.sollicitudin@Quisquefringillaeuismod.net","Odessa Pena","1966-11-08","Jaipur","Cyprus");
