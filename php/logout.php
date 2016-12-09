@@ -1,5 +1,5 @@
 <?php
-    include('connectdb.php');
+    include_once('connectdb.php');
 
     unset($_SESSION['username']);
 

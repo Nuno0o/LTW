@@ -18,7 +18,8 @@
 		<?php else:?>
 		<form action="php/logout.php" method="post">
 			<label id="user_name"><?php echo $_SESSION['username']; ?></label>
-			<input id="login_btn" type="submit" value="Logout">
+			<input id="login_btn" type="submit" value="Logout" style="position: absolute;top:35%;color:#A0958d;">
+			<input id="edit_btn" type="submit" value="Edit Profile">
 		</form>
 		<?php endif;?>
 	</div>

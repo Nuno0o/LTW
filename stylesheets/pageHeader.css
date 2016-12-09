@@ -1,4 +1,10 @@
 
+/*
+	-------------------------------------------------------------------------------------------------------------
+	--------------------------------------- PAGE HEADER DESIGN --------------------------------------------------
+	-------------------------------------------------------------------------------------------------------------
+*/
+
 #page_header{
 	float: left;
 	height: 160px;
@@ -28,15 +34,17 @@
 	top: 3em;
 	height: 6em;
 
-	left: 5%;
-	width:25%;
+	left: 50px;
+	width:250px;
 	min-width:300px;
 
 	text-align: center;
 
 	font-family: 'Playfair Display', serif;
+}
 
-	background-color: #373737;
+input:focus{
+	outline:none;
 }
 
 #usernameThings{
@@ -53,13 +61,11 @@
 
 #username_input {
 	float: right;
-	width: 40%;
+	width: 150px;
 	margin-right: 1em;
 	border: 0;
 	height: 1em;
 	text-align: center;
-
-	font-style: italic;
 	font-family: 'Playfair Display', serif;
 
 	border-bottom: 2px solid #C0B283;
@@ -70,13 +76,11 @@
 
 #password_input {
 	float: right;
-	width: 40%;
+	width: 150px;
 	margin-right: 1em;
 	border: 0;
 	height: 1em;
 	text-align: center;
-
-	font-style: italic;
 	font-family: 'Playfair Display', serif;
 
 	border-bottom: 2px solid #C0B283;
@@ -101,17 +105,27 @@
 	margin-right: 17.5%;
 	border: 0;
 	background-color:inherit;
-	cursor:pointer;
-	font-family: 'Playfair Display', serif;
-
+	font-family: inherit;
 	color:  #C0B283;
+
+	font-size:1.3em;
+}
+
+#login_btn:hover{
+	cursor:pointer;
+	color: #373737;
+	background-color: #C0B283;
+	transition: background-color 0.3s ease-in-out;
 }
 
 #user_name{
 	font-family: 'Playfair Display', serif;
+	font-size: 1.4em;
 	color: #C0B283;
-	vertical-align: middle;
-	padding-left: 10em;
+	padding-right: 0.1em;
+	position: relative;
+	display: inline-block;
+	left: 40%;
 }
 #user_name:before{
 	content:'Welcome, ';
@@ -119,55 +133,21 @@
 #user_name:after{
 	content:'.';
 }
-/*
-#login_btn{
-	-moz-box-shadow: 0px 0px 21px 0px #ff8e03;
-	-webkit-box-shadow: 0px 0px 21px 0px #ff8e03;
-	box-shadow: 0px 0px 18px 0px #ff8e03;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fca800), color-stop(1, #a15900));
-	background:-moz-linear-gradient(top, #fca800 5%, #a15900 100%);
-	background:-webkit-linear-gradient(top, #fca800 5%, #a15900 100%);
-	background:-o-linear-gradient(top, #fca800 5%, #a15900 100%);
-	background:-ms-linear-gradient(top, #fca800 5%, #a15900 100%);
-	background:linear-gradient(to bottom, #fca800 5%, #a15900 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fca800', endColorstr='#a15900',GradientType=0);
-	background-color:#fca800;
-	-moz-border-radius:2px;
-	-webkit-border-radius:2px;
-	border-radius:2px;
-	border-width:0px;
-	display:inline-block;
+
+#edit_btn {
+	color: #A0958d;
+	font-family: 'Playfair Display', serif;
+	background-color: inherit;
+	font-size: 1.3em;
+	border: none;
+	position: absolute;
+	top: 70%;
+	left: 70%;
+}
+
+#edit_btn:hover {
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 15px #000000;
-	left:1450px;
-	top:18px;
+	color:#373737;
+	background-color: #C0B283;
+	transition: background-color 0.3s ease-in-out;
 }
-#login_btn:hover{
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a15900), color-stop(1, #fca800));
-	background:-moz-linear-gradient(top, #a15900 5%, #fca800 100%);
-	background:-webkit-linear-gradient(top, #a15900 5%, #fca800 100%);
-	background:-o-linear-gradient(top, #a15900 5%, #fca800 100%);
-	background:-ms-linear-gradient(top, #a15900 5%, #fca800 100%);
-	background:linear-gradient(to bottom, #a15900 5%, #fca800 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a15900', endColorstr='#fca800',GradientType=0);
-	background-color:#a15900;
-	left:1450px;
-	top:18px;
-}
-#login_btn:active{
-	left:1450px;
-	top:18px;
-}
-#user_name{
-	font-size:50px;
-	text-align:right;
-	top:5px;
-	left:0;
-	width:1400px;
-}
-*/
