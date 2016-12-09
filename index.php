@@ -1,4 +1,6 @@
-<?php
+<?php	
+	#phpinfo();
+	include('./php/connectdb.php');
 	include('./pageLayout/head.php');
 	include('./pageLayout/pageHeader.php');
 	include('./pageLayout/main_body.php');

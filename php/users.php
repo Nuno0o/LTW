@@ -1,39 +1,39 @@
-<?php
+﻿<?php
     function newUser($dbh,$user,$password,$email,$name,$birth,$city,$country){
-        $stmt = $dbh->prepare('INSERT INTO user VALUES(?,?,?,?,?,?,?)');
+        $stmt = $dbh->prepare('INSERT INTO users VALUES(?,?,?,?,?,?,?)');
         $stmt->execute(array($user,md5($password),$email,$name,$birth,$city,$country));
     }
 
     function getUser($dbh,$user){
-        $stmt = $dbh->prepare('SELECT * FROM user WHERE username = ?');
+        $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
         $stmt->execute(array($user));
 
         return $stmt->fetch();
     }
 
     function changeUserPassword($dbh,$user,$password){
-        $stmt = $dbh->prepare('UPDATE user SET password = ? WHERE username = ?');
+        $stmt = $dbh->prepare('UPDATE users SET password = ? WHERE username = ?');
         $stmt->execute(array(md5($password),$user));
 
         return $stmt->rowCount() ? true : false;
     }
 
     function changeUserEmail($dbh,$user,$email){
-        $stmt = $dbh->prepare('UPDATE user SET email = ? WHERE username = ?');
+        $stmt = $dbh->prepare('UPDATE users SET email = ? WHERE username = ?');
         $stmt->execute(array($email,$user));
 
         return $stmt->rowCount() ? true : false;
     }
 
     function searchUsers($dbh,$string){
-        $stmt = $dbh->prepare('SELECT * FROM user WHERE username LIKE \'%?%\' OR email LIKE \'%?%\'');
+        $stmt = $dbh->prepare('SELECT * FROM users WHERE username LIKE \'%?%\' OR email LIKE \'%?%\'');
         $stmt->execute(array($string,$string));
 
         return $stmt->fetchAll();
     }
 
     function addDescription($dbh,$user,$description){
-        $stmt = $dbh->prepare('UPDATE user SET description = ? WHERE user = ?');
+        $stmt = $dbh->prepare('UPDATE users SET description = ? WHERE username = ?');
         $stmt->execute(array($description,$user));
 
         return $stmt->rowCount() ? true : false;
@@ -142,6 +142,26 @@
   newUser($dbh,"user98","1234","turpis.Nulla.aliquet@auctor.net","Hedda Snow","1992-06-17","Herdersem","Uruguay");
   newUser($dbh,"user99","1234","risus@nisl.net","Colin Snider","1969-03-27","Cardedu","Sint Maarten");
   newUser($dbh,"user100","1234","nunc@risusDonecnibh.edu","Logan Beasley","1971-08-16","Malartic","Sudan");
+  newUser($dbh,"owner1","1234","quam@duilectus.ca","John Willis","1995-05-01","Kalisz","Portugal");
+  newUser($dbh,"owner2","1234","interdum.Nunc.sollicitudin@Quisquefringillaeuismod.net","Odessa Pena","1966-11-08","Jaipur","Cyprus");
+  newUser($dbh,"owner3","1234","scelerisque.neque@tristiqueneque.com","Hailley Washington","1973-06-12","Redruth","Liberia");
+  newUser($dbh,"owner4","1234","ut.pellentesque@ultricessitamet.ca","Trent Richard","1954-07-07","Macklin","New Zealand");
+  newUser($dbh,"owner5","1234","eleifend.non.dapibus@arcuet.com","Winter Sutton","1971-07-26","Starachowice","Macedonia");
+  newUser($dbh,"owner6","1234","nibh@nec.com","Frank Kirby","1943-09-25","Honolulu","Monaco");
+  newUser($dbh,"owner7","1234","lectus.convallis.est@fringillapurus.edu","Mary Olsen","1944-07-07","West Vancouver","Mauritius");
+  newUser($dbh,"owner8","1234","metus@Sedmalesuadaaugue.com","Griffith Mitchell","1962-08-24","College","Cura�ao");
+  newUser($dbh,"owner9","1234","cursus@bibendum.ca","Nadia Rollins","1961-10-31","Traun","Gibraltar");
+  newUser($dbh,"owner10","1234","Nam.nulla@etnuncQuisque.ca","Zephir Zimmerman","1970-05-13","Balikesir","Falkland Islands");
+  newUser($dbh,"owner11","1234","luctus@Nulla.ca","Bill Cooper","1990-02-26","Nancagua","Brunei");
+  newUser($dbh,"owner12","1234","erat.volutpat.Nulla@Aenean.com","Donald Trump","1997-12-09","Cami�a","Puerto Rico");
+  newUser($dbh,"owner13","1234","Donec.vitae@ametlorem.net","Aaron Schwartz","1970-10-15","�u�oa","Slovakia");
+  newUser($dbh,"owner14","1234","pretium@sempercursusInteger.edu","Lester nygaard","1947-01-16","Maisi�res","Sudan");
+  newUser($dbh,"owner15","1234","sodales.elit@cursusNuncmauris.co.uk","Mickey Rourke","1982-11-15","Pukekohe","Palau");
+  newUser($dbh,"owner16","1234","quis@ut.org","Isaac Newton","1999-08-14","Sauris","Iran");
+  newUser($dbh,"owner17","1234","condimentum.Donec@dictum.org","Hermione Granger","1974-10-28","Kilmalcolm","Honduras");
+  newUser($dbh,"owner18","1234","pellentesque@lacusvestibulumlorem.co.uk","Naseem May","1986-12-09","San Giorgio Albanese","Luxembourg");
+  newUser($dbh,"owner19","1234","adipiscing@viverra.com","Cassie Witman","1990-09-01","Telde","Bonaire, Sint Eustatius and Saba");
+  newUser($dbh,"owner20","1234","pharetra.nibh@aceleifend.com","Herman José","1994-02-25","Elgin","Nepal");
   newUser($dbh,"admin","1234",NULL,NULL,NULL,NULL,NULL);
 }
 ?>
