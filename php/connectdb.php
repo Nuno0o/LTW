@@ -11,6 +11,4 @@
 	catch(PDOException $e){
 		echo 'Connection failed: ', $e->getMessage();
 	}
-	populate_database($dbh);
-
 ?>
