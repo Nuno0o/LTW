@@ -1,6 +1,6 @@
 <?php
-    include_once('connectdb.php');
-    include_once('users.php');
+    include('connectdb.php');
+    include('manageusers.php');
 
     if(isset($_POST['username_input'])){
         $user = $_POST['username_input'];

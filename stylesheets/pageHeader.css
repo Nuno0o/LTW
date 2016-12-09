@@ -1,10 +1,4 @@
 
-/*
-	-------------------------------------------------------------------------------------------------------------
-	--------------------------------------- PAGE HEADER DESIGN --------------------------------------------------
-	-------------------------------------------------------------------------------------------------------------
-*/
-
 #page_header{
 	float: left;
 	height: 160px;
@@ -34,17 +28,15 @@
 	top: 3em;
 	height: 6em;
 
-	left: 50px;
-	width:250px;
+	left: 5%;
+	width:25%;
 	min-width:300px;
 
 	text-align: center;
 
 	font-family: 'Playfair Display', serif;
-}
 
-input:focus{
-	outline:none;
+	background-color: #373737;
 }
 
 #usernameThings{
@@ -61,11 +53,13 @@ input:focus{
 
 #username_input {
 	float: right;
-	width: 150px;
+	width: 40%;
 	margin-right: 1em;
 	border: 0;
 	height: 1em;
 	text-align: center;
+
+	font-style: italic;
 	font-family: 'Playfair Display', serif;
 
 	border-bottom: 2px solid #C0B283;
@@ -76,11 +70,13 @@ input:focus{
 
 #password_input {
 	float: right;
-	width: 150px;
+	width: 40%;
 	margin-right: 1em;
 	border: 0;
 	height: 1em;
 	text-align: center;
+
+	font-style: italic;
 	font-family: 'Playfair Display', serif;
 
 	border-bottom: 2px solid #C0B283;
@@ -123,3 +119,55 @@ input:focus{
 #user_name:after{
 	content:'.';
 }
+/*
+#login_btn{
+	-moz-box-shadow: 0px 0px 21px 0px #ff8e03;
+	-webkit-box-shadow: 0px 0px 21px 0px #ff8e03;
+	box-shadow: 0px 0px 18px 0px #ff8e03;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fca800), color-stop(1, #a15900));
+	background:-moz-linear-gradient(top, #fca800 5%, #a15900 100%);
+	background:-webkit-linear-gradient(top, #fca800 5%, #a15900 100%);
+	background:-o-linear-gradient(top, #fca800 5%, #a15900 100%);
+	background:-ms-linear-gradient(top, #fca800 5%, #a15900 100%);
+	background:linear-gradient(to bottom, #fca800 5%, #a15900 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fca800', endColorstr='#a15900',GradientType=0);
+	background-color:#fca800;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border-width:0px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 15px #000000;
+	left:1450px;
+	top:18px;
+}
+#login_btn:hover{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a15900), color-stop(1, #fca800));
+	background:-moz-linear-gradient(top, #a15900 5%, #fca800 100%);
+	background:-webkit-linear-gradient(top, #a15900 5%, #fca800 100%);
+	background:-o-linear-gradient(top, #a15900 5%, #fca800 100%);
+	background:-ms-linear-gradient(top, #a15900 5%, #fca800 100%);
+	background:linear-gradient(to bottom, #a15900 5%, #fca800 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a15900', endColorstr='#fca800',GradientType=0);
+	background-color:#a15900;
+	left:1450px;
+	top:18px;
+}
+#login_btn:active{
+	left:1450px;
+	top:18px;
+}
+#user_name{
+	font-size:50px;
+	text-align:right;
+	top:5px;
+	left:0;
+	width:1400px;
+}
+*/

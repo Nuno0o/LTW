@@ -5,7 +5,7 @@
 	<head>
 		<title>Restaurant Reviewer</title>
 		<meta charset='UTF-8'>
-		<link rel="stylesheet" href="./stylesheets/mainBody.css">
+		<!--<link rel="stylesheet" href="./stylesheets/landing_page.css"> -->
 		<link rel="stylesheet" href="./stylesheets/pageHeader.css">
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 	</head>
