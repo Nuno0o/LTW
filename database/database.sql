@@ -48,10 +48,10 @@ CREATE TABLE comments(
 );
 
 INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
-('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias',1996-10-28,'porto','portugal','owner','ola sou o tobias'),
-('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao',1996-10-25,'lisboa','portugal','reviewer','ola sou o joao'),
-('user3','81dc9bdb52d04dc20036dbd8313ed055','email3@generico.com','carlos',1990-10-22,'porto','portugal','reviewer','ola sou o carlos'),
-('admin1','81dc9bdb52d04dc20036dbd8313ed055','email4@generico.com','admin',1990-10-21,'chaves','portugal','admin','ola sou o admin');
+('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias','1996-10-28','porto','portugal','owner','ola sou o tobias'),
+('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao','1996-10-25','lisboa','portugal','reviewer','ola sou o joao'),
+('user3','81dc9bdb52d04dc20036dbd8313ed055','email3@generico.com','carlos','1990-10-22','porto','portugal','reviewer','ola sou o carlos'),
+('admin1','81dc9bdb52d04dc20036dbd8313ed055','email4@generico.com','admin','1990-10-21','chaves','portugal','admin','ola sou o admin');
 
 
 

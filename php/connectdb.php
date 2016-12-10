@@ -1,6 +1,9 @@
 <?php
-    session_start();
-    $dbh = new PDO('sqlite:../database/database.db');
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    function connectdb($path){
+        $dbh = new PDO('sqlite:' . $path);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+        return $dbh;
+    }
 ?>

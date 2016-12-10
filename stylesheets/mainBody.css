@@ -19,16 +19,6 @@ body {
 
 }
 
-#register_body{
-
-	float: left;
-	width: 100%;
-	min-width: 1000px;
-	height: 550px;
-	border-bottom: 5px solid #C0B283;
-
-}
-
 #search_area div {
 	padding: 0; margin: 0;
 }

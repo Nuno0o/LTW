@@ -1,6 +1,9 @@
 <?php
+    session_start();
     include_once('connectdb.php');
     include_once('users.php');
+    
+    $dbh = connectdb('../database/database.db');
     
     if(isset($_POST['username_input'])){
         $user = $_POST['username_input'];

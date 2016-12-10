@@ -27,8 +27,8 @@
 			<label id="user_name"><?php echo $_SESSION['username']; ?></label>
 			<input id="logout_btn" type="submit" value="Logout">
 		</form>
-		<form action="profile.php" method="post">
-			<input id="edit_btn" type="submit" value="My Profile">
+		<form id="my_profile" action="profile.php<?php echo '?username=' . $_SESSION['username'];?>" method="post">
+			<input id="profile_btn" type="submit" value="My Profile">
 		</form>
 		<?php endif;?>
 	</div>

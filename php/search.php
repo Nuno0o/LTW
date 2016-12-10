@@ -1,6 +1,10 @@
 <?php
+    session_start();
     include_once('connectdb.php');
     include_once('restaurants.php');
+    
+    $dbh = connectdb('../database/database.db');
+
     $results = getRestaurantsSearch($dbh,
                                     $_GET['name'],
                                     $_GET['min'],
