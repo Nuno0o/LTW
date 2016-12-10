@@ -6,22 +6,22 @@
 				<input id="input" name="username_input" type="text" required>
                 <br><br>
                 <label >Password</label>
-				<input id="input" name="username_input" type="password" required>
+				<input id="input" name="password_input" type="password" required>
                 <br><br>
                 <label >Email</label>
-				<input id="input" name="username_input" type="text">
+				<input id="input" name="email_input" type="text">
                 <br><br>
                 <label >Name</label>
-				<input id="input" name="username_input" type="text">
+				<input id="input" name="name_input" type="text">
                 <br><br>
                 <label >Birthdate</label>
-				<input id="input" name="username_input" type="date">
+				<input id="input" name="birth_input" type="date">
                 <br><br>
                 <label >City</label>
-				<input id="input" name="username_input" type="text">
+				<input id="input" name="city_input" type="text">
                 <br><br>
                 <label >Country</label>
-                <select id="input">
+                <select id="input" name="country_input">
     <option value="  " selected>(please select a country)</option>
     <option value="--">none</option>
     <option value="AF">Afghanistan</option>
