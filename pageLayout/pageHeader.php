@@ -1,7 +1,9 @@
 <div id="page_header">
-	<div id="stock_img"> 
-		<img src="./resources/restaurant_stock.jpg" />
-	</div>
+	<a href="index.php">
+		<div id="stock_img"> 
+			<img src="./resources/restaurant_stock.jpg" />
+		</div>
+	</a>
 	<div id="login_area">
 		<?php if(!isset($_SESSION['username'])):?>
 		<form action="php/login.php" method="post">
