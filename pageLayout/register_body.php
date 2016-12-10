@@ -22,7 +22,7 @@
                 <br><br>
                 <label >Country</label>
                 <select id="input" name="country_input">
-    <option value="  " selected>(please select a country)</option>
+    <option selected>(please select a country)</option>
     <option value="--">none</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>
@@ -264,6 +264,12 @@
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
 </select>   
+            <br><br>
+            <label >User type</label>
+            <select id="input" name="type_input">
+                <option value="reviewer">Reviewer</option>
+                <option value="owner">Owner</option>
+            </select>
             <br><br>
             <input id="submit_btn" type="submit" value="Create"> 
         </form>

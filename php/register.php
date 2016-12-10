@@ -10,6 +10,10 @@
         $pass = $_POST['password_input'];
     }else header('Location: ../register.php');
 
+    if(isset($_POST['type_input'])){
+        $type = $_POST['type_input'];
+    }else header('Location: ../register.php');
+
     if(isset($_POST['email_input'])){
         $email = $_POST['email_input'];
     }else $email = null;
@@ -30,7 +34,7 @@
         $country = $_POST['country_input'];
     }else $country = null;
 
-    $success = newUser($dbh,$user,$pass,$email,$name,$birth,$city,$country);
+    $success = newUser($dbh,$user,$pass,$email,$name,$birth,$city,$country,$type);
     if($success == true)
         header('Location: ../index.php');
     else header('Location: ../register.php');

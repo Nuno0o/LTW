@@ -1,7 +1,12 @@
 <?php
-    function newUser($dbh,$user,$password,$email,$name,$birth,$city,$country){
-        $stmt = $dbh->prepare('INSERT INTO account (username,password,email,name,birth,city,country) VALUES(?,?,?,?,?,?,?)');
-        return $stmt->execute(array($user,md5($password),$email,$name,$birth,$city,$country));
+    function newUser($dbh,$user,$password,$email,$name,$birth,$city,$country,$type){
+        try {
+            $stmt = $dbh->prepare('INSERT INTO account (username,password,email,name,birth,city,country,type) VALUES(?,?,?,?,?,?,?,?)');
+            return $stmt->execute(array($user,md5($password),$email,$name,$birth,$city,$country,$type));
+        }
+        catch( PDOException $Exception ) {
+        
+        }
     }
 
     function getUser($dbh,$user){

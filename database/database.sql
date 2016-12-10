@@ -7,22 +7,8 @@ CREATE TABLE account(
 	birth DATE,
 	city VARCHAR(50),
 	country VARCHAR(50),
-	description VARCHAR(256)
-);
-
-DROP TABLE IF EXISTS admins;
-CREATE TABLE admins(
-	user_id VARCHAR(16) PRIMARY KEY REFERENCES account(username)
-);
-
-DROP TABLE IF EXISTS owners;
-CREATE TABLE owners(
-	user_id VARCHAR(16) PRIMARY KEY REFERENCES account(username)
-);
-
-DROP TABLE IF EXISTS reviewers;
-CREATE TABLE reviewers(
-	user_id VARCHAR(16) PRIMARY KEY REFERENCES account(username)
+	description VARCHAR(256),
+	type VARCHAR(10)
 );
 
 DROP TABLE IF EXISTS reviews;
@@ -59,17 +45,11 @@ CREATE TABLE comments(
 	comment_text VARCHAR(1000) NOT NULL
 );
 
-INSERT INTO account (username,password,email,name,birth,city,country,description) VALUES
-('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias',1996-10-28,'porto','portugal','ola sou o tobias'),
-('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao',1996-10-25,'lisboa','portugal','ola sou o joao'),
-('user3','81dc9bdb52d04dc20036dbd8313ed055','email3@generico.com','carlos',1990-10-22,'porto','portugal','ola sou o carlos'),
-('admin1','81dc9bdb52d04dc20036dbd8313ed055','email4@generico.com','admin',1990-10-21,'chaves','portugal','ola sou o admin');
-
-INSERT INTO owners (user_id) VALUES ('user1');
-
-INSERT INTO reviewers (user_id) VALUES ('user2'),('user3');
-
-INSERT INTO admins (user_id) VALUES ('admin1');
+INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
+('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias',1996-10-28,'porto','portugal','owner','ola sou o tobias'),
+('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao',1996-10-25,'lisboa','portugal','reviewer','ola sou o joao'),
+('user3','81dc9bdb52d04dc20036dbd8313ed055','email3@generico.com','carlos',1990-10-22,'porto','portugal','reviewer','ola sou o carlos'),
+('admin1','81dc9bdb52d04dc20036dbd8313ed055','email4@generico.com','admin',1990-10-21,'chaves','portugal','admin','ola sou o admin');
 
 
 
