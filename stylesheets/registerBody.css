@@ -1,0 +1,57 @@
+#register_area div {
+	padding: 0; margin: 0;
+}
+
+#register_area{
+
+	height:100%;
+	width:40%;
+	min-width: 400px;
+
+	padding-left: 1em;
+	padding-right: 1em;
+
+	margin:0 auto;
+
+	color: #C0B283;
+	background-color: #373737;
+
+	font-family: 'Playfair Display', serif;
+
+	border-right: 5px solid #C0B283;
+	border-left: 5px solid #C0B283;
+	text-align:center;
+}
+
+#input {
+	border: 0px solid;
+	height: 1.5em;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+
+	border-bottom: 2px solid #C0B283;
+	color: #DCD0C0;
+	background:transparent;
+}
+
+#submit_btn {
+	position:relative;
+	left:50px;
+	margin-right: 17.5%;
+	border-style:solid;
+	border-width: 5px;
+	background-color:inherit;
+	font-family: inherit;
+	font-size:4em;
+	font-weight:bold;
+	color:  #C0B283;
+	border-color: #C0B283;
+
+}
+
+#submit_btn:hover{
+	cursor:pointer;
+	color: #373737;
+	background-color: #C0B283;
+	transition: background-color 0.3s ease-in-out;
+}

@@ -26,7 +26,7 @@ body {
 #search_area{
 
 	float:left;
-	height: 550px;
+	height: 100%;
 
 	width:25%;
 	min-width: 400px;
@@ -36,11 +36,11 @@ body {
 	padding-right: 1em;
 
 	color: #C0B283;
-	background-color: #373737;//#4b4b4b;
+	background-color: #373737;
 
 	font-family: 'Playfair Display', serif;
 
-	border-right: 3px solid #C0B283;
+	border-right: 5px solid #C0B283;
 }
 
 #search_area #introParagraphDiv p{

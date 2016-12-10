@@ -16,27 +16,22 @@
 }
 
 #stock_img *{
-	position:relative;
-	z-index: 1;
 	float: right;
-	width: 50%;
-	min-width:600px;
+	width: 100%;
+	min-width:700px;
 	height: 160px;
-	overflow:hidden;
 	background-color:lime;
 }
 
 #login_area {
+	position: relative;
 
-	position: absolute;
-	display:inline-block;
-
-	top: 3em;
+	left:-150px;
+	margin:0 auto;
+	top:-7.5em;
 	height: 6em;
 
-	left: 50px;
-	width:250px;
-	min-width:300px;
+	width:300px;
 
 	text-align: center;
 
@@ -47,10 +42,7 @@ input:focus{
 	outline:none;
 }
 
-#usernameThings{
-	margin-top: 1em;
-	margin-bottom: 5px;
-}
+
 
 #username_label {
 	padding-left: 1em;
@@ -70,7 +62,7 @@ input:focus{
 
 	border-bottom: 2px solid #C0B283;
 	color: #DCD0C0;
-	background-color: #373737;
+	background:transparent;
 }
 
 
@@ -85,13 +77,10 @@ input:focus{
 
 	border-bottom: 2px solid #C0B283;
 	color: #DCD0C0;
-	background-color: #373737;
+	background:transparent;
  
 }
 
-#passwordThings {
-	margin-bottom: 5px;
-}
 
 #password_label{
 	padding-left: 1em;
@@ -102,6 +91,7 @@ input:focus{
 
 #login_btn {
 	float:right;
+	left:100;
 	margin-right: 17.5%;
 	border: 0;
 	background-color:inherit;
@@ -111,7 +101,50 @@ input:focus{
 	font-size:1.3em;
 }
 
+#logout_btn {
+	position:relative;
+	top:60px;
+	margin-right: 17.5%;
+	border: 0;
+	background-color:inherit;
+	font-family: inherit;
+	color:  #C0B283;
+
+	font-size:1.3em;
+}
+
+#register_btn {
+	position:relative;
+	left:350px;
+	top:-85px;
+	margin-right: 17.5%;
+	border-style:solid;
+	border-width: 5px;
+	left:100;
+	background-color:inherit;
+	font-family: inherit;
+	font-size:4em;
+	font-weight:bold;
+	color:  #C0B283;
+	border-color: #C0B283;
+
+}
+
 #login_btn:hover{
+	cursor:pointer;
+	color: #373737;
+	background-color: #C0B283;
+	transition: background-color 0.3s ease-in-out;
+}
+
+#register_btn:hover{
+	cursor:pointer;
+	color: #373737;
+	background-color: #C0B283;
+	transition: background-color 0.3s ease-in-out;
+}
+
+#logout_btn:hover{
 	cursor:pointer;
 	color: #373737;
 	background-color: #C0B283;
@@ -135,14 +168,15 @@ input:focus{
 }
 
 #edit_btn {
-	color: #A0958d;
-	font-family: 'Playfair Display', serif;
-	background-color: inherit;
-	font-size: 1.3em;
-	border: none;
-	position: absolute;
-	top: 70%;
-	left: 70%;
+	position:relative;
+	left:80px;
+	margin-right: 17.5%;
+	border: 0;
+	background-color:inherit;
+	font-family: inherit;
+	color:  #C0B283;
+
+	font-size:1.3em;
 }
 
 #edit_btn:hover {
