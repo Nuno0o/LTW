@@ -8,19 +8,20 @@
 			<ul>
 				<li id="nameDiv" />
 					<p>... name: </p>
-					<input id="nameDivInput" type="text">
+					<input class="search_btn" id="res_name" type="text">
 				</li>
 				<li id="priceRangeDiv" />
 					<p>... price range: </p>
-					<input id="nameDivInput" type="text">
+					<input class="search_btn" id="res_price1" type="number" style="width:50px;">
+					<input class="search_btn" id="res_price2" type="number" style="width:50px;margin-right:56px;">
 				</li>
 				<li id="locationDiv" />
 					<p>... location: </p>
-					<input id="nameDivInput" type="text">
+					<input class="search_btn" id="res_locat" type="text">
 				</li>
 				<li id="popularityDiv" />
-					<p>... reviews: </p>
-					<input id="nameDivInput" type="text">
+					<p>... minimum rating: </p>
+					<input class="search_btn" id="res_rat" type="number" min="1" max="10">
 				</li>
 			</ul>
 		</div>
@@ -42,7 +43,7 @@
 			</ul>
  		</div>
 	</div>
-	<div id="latest_reviews" >
-		<p>LatestRevies LOREM IPSUM DOREM</p>
+	<div id="show_restaurants" >
+		<p>colocar aqui imagem de boas vindas ou algo parecido, depois desaparece automaticamente</p>
 	</div>
 </div>

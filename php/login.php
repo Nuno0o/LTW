@@ -1,7 +1,7 @@
 <?php
     include_once('connectdb.php');
     include_once('users.php');
-
+    
     if(isset($_POST['username_input'])){
         $user = $_POST['username_input'];
     }else $user = '';
@@ -15,7 +15,7 @@
 
     if($retrieved_user['password'] === $hashed_pass){
         $_SESSION['username'] = $user;
-    }
-    header('Location: ../index.php');
+        header('Location: ../index.php');
+    }else header('Location: ../index.php?invalidacc=1');
     exit();
 ?>

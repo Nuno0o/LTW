@@ -1,4 +1,4 @@
-<div id="main_body">
+<div id="register_body">
 	<div id="register_area">
         <form action="php/register.php" method="post">
                 <br><br>

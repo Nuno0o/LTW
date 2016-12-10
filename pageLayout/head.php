@@ -11,5 +11,6 @@
 		<link rel="stylesheet" href="./stylesheets/about.css">
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="script/script.js"></script>
 	</head>
 	<body>

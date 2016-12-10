@@ -1,6 +1,6 @@
 <?php
 
-function addRestaurant($dbh,$name,$address,$city,$country,$description){
+/*function addRestaurant($dbh,$name,$address,$city,$country,$description){
     $stmt = $dbh->prepare('INSERT INTO restaurant (name,address,city,country,description) VALUES (?,?,?,?,?)');
     $stmt->execute(array($name,$address,$city,$country,$description));
 
@@ -27,14 +27,33 @@ function getRestaurants($dbh,$string){
         '
         SELECT *
         FROM restaurant WHERE
-        name LIKE \'%?%\' OR
-        city LIKE \'%?%\' OR
-        address LIKE \'%?%\'
+        name LIKE ? OR
+        city LIKE ? OR
+        address LIKE ?
         '
     );
     $stmt->execute(array($string,$string,$string));
     return $stmt->fetchAll();
+}*/
+
+function getRestaurantsSearch($dbh,$name,$minprice,$maxprice,$location,$rating){
+    $stmt = $dbh->prepare(
+        '
+        SELECT *
+        FROM restaurants WHERE
+        name LIKE ? AND
+        (city LIKE ? OR
+        address LIKE ? OR
+        country LIKE ?) AND
+        average_price >= ? AND
+        average_price <= ? AND
+        average_score >= ?
+        '
+    );
+    $stmt->execute(array('%'.$name.'%','%'.$location.'%','%'.$location.'%','%'.$location.'%',$minprice,$maxprice,$rating));
+    return $stmt->fetchAll();
 }
+/*
 function getRestaurantFromId($dbh,$id){
     $stmt = $dbh->prepare(
         '
@@ -56,5 +75,5 @@ function getAllRestaurants($dbh){
     $stmt->execute(array());
     return $stmt->fetchAll();
 }
-
+*/
 ?>

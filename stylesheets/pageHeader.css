@@ -42,7 +42,9 @@ input:focus{
 	outline:none;
 }
 
-
+#incorrect{
+	color:red;
+}
 
 #username_label {
 	padding-left: 1em;

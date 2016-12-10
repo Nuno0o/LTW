@@ -13,7 +13,11 @@
 				<label id="password_label">Password</label>
 				<input id="password_input" name="password_input" type="password" required>
 			</div>
+			<?php if(isset($_GET['invalidacc'])): ?>
+			<label id="incorrect">Incorrect username/password</label><br>
+			<?php endif;?>
 			<input id="login_btn" type="submit" value="Login">
+
 		</form>
 		<input id="register_btn" type="button" onclick="window.location = 'register.php';" value="Register">
 		<?php else:?>
@@ -22,7 +26,7 @@
 			<input id="logout_btn" type="submit" value="Logout">
 		</form>
 		<form action="profile.php" method="post">
-			<input id="edit_btn" type="submit" value="Edit Profile">
+			<input id="edit_btn" type="submit" value="My Profile">
 		</form>
 		<?php endif;?>
 	</div>
