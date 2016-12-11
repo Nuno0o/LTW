@@ -5,6 +5,7 @@
             include_once('./php/connectdb.php');
             include_once('./php/users.php');
             include_once('./php/restaurants.php');
+            include_once('./php/reviews.php');
 
             $dbh = connectdb('./database/database.db');
 
@@ -68,7 +69,13 @@
         </div>
         <div id="restaurant_reviews">
             <?php
-
+                $reviews = getReviews($dbh,$_GET['restid']);
+                echo count($reviews);
+                foreach($reviews as &$review){
+                    echo '<div class="review">';
+                    echo 'ola';
+                    echo '</div>';
+                }
             ?>
         </div>
         <?php

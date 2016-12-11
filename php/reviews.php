@@ -9,7 +9,7 @@ function getReviews($dbh,$restaurant){
         ORDER BY review_date DESC
         '
     );
-    $stmt->execute(array('%'.$name.'%','%'.$location.'%','%'.$location.'%','%'.$location.'%',$minprice,$maxprice,$rating));
+    $stmt->execute(array($restaurant));
     return $stmt->fetchAll();
 }
 
