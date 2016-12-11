@@ -19,43 +19,57 @@
                 
             }else{
         ?>
+        <div id = "details_area">
             <br>
-            <div id="profile_type">
-                <?php echo $user['type'];?>
+            <div id="username_and_edit">
+                <div id="profile_username">
+                    <?php echo '@'.$user['username'];?>
+                </div>
+                <?php
+                if($_GET['username'] == $_SESSION['username']){?>
+                    <div id="user_edit_profile_btn">
+                    <form action="profile_edit.php" method="post">
+                        <input id="edit_profile_btn" type="submit" value="Edit profile">
+                    </form>
+                    </div>
+                <?php } ?>  
             </div>
-            <div id="profile_username">
-                <?php echo '@'.$user['username'];?>
-            </div>
-            <div id="profile_name">
-                <?php 
-                    if($user['name'] != null)
-                         echo $user['name'];
-                    else echo 'Unkown birthday';
-                ?>
-            </div>
-            <div id="profile_image">
-                aqui vai a imagem
-            </div>
-            <div id="profile_email">
-                <?php echo $user['email'];?>
-            </div>
+            
+            <div id="account_details">
+                <div id="account_header">
+                    Account Details:
+                </div>
+                <div id="profile_type">
+                    <?php echo $user['type'];?>
+                </div>
+                <div id="profile_name">
+                    <?php 
+                        if($user['name'] != null)
+                             echo $user['name'];
+                        else echo 'Unkown birthday';
+                    ?>
+                </div>
+                <div id="profile_email">
+                    <?php echo $user['email'];?>
+                </div>
 
-            <div id="profile_birthdate">
-                <?php 
-                    if($user['birth'] != null)
-                         echo $user['birth'];
-                    else echo 'Unkown birthday';
-                ?>
-            </div>
-            <div id="profile_place">
-                <?php 
-                    if($user['city'] != null)
-                         echo $user['city'];
-                    if($user['city'] != null && $user['country'] != null)
-                        echo ', ';
-                    if($user['country'] != null)
-                        echo $user['country'];
-                ?>
+                <div id="profile_birthdate">
+                    <?php 
+                        if($user['birth'] != null)
+                             echo $user['birth'];
+                        else echo 'Unkown birthday';
+                    ?>
+                </div>
+                <div id="profile_place">
+                    <?php 
+                        if($user['city'] != null)
+                             echo $user['city'];
+                        if($user['city'] != null && $user['country'] != null)
+                            echo ', ';
+                        if($user['country'] != null)
+                            echo $user['country'];
+                    ?>
+                </div>
             </div>
             <div id="profile_description">
                 <?php 
@@ -64,15 +78,11 @@
                     else echo 'This user has no description.';
                 ?>
             </div>
-            <?php
-            if($_GET['username'] == $_SESSION['username']){?>
-                <div id="user_edit_profile_btn">
-                <form action="profile_edit.php" method="post">
-                    <input id="edit_profile_btn" type="submit" value="Edit profile">
-                </form>
-                </div>
-            <?php } ?>
-
+            <div id="profile_image">
+                    aqui vai a imagem
+            </div>
+            
+        </div>
         <?php } ?>
     </div>
 </div>

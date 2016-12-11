@@ -5,6 +5,7 @@
 */
 
 #about {
+	min-width: 1000px;
 	width: 100%;
 	height: 54px;
 	display:inline-block;
