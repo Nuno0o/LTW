@@ -53,27 +53,16 @@ function getRestaurantsSearch($dbh,$name,$minprice,$maxprice,$location,$rating){
     $stmt->execute(array('%'.$name.'%','%'.$location.'%','%'.$location.'%','%'.$location.'%',$minprice,$maxprice,$rating));
     return $stmt->fetchAll();
 }
-/*
+
 function getRestaurantFromId($dbh,$id){
     $stmt = $dbh->prepare(
         '
         SELECT *
-        FROM restaurant WHERE
+        FROM restaurants WHERE
         id = ?
         '
     );
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
-function getAllRestaurants($dbh){
-    $stmt = $dbh->prepare(
-        '
-        SELECT *
-        FROM restaurant
-        '
-    );
-    $stmt->execute(array());
-    return $stmt->fetchAll();
-}
-*/
 ?>

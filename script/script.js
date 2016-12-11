@@ -43,7 +43,7 @@ function lineReceived(index, value) {
     // Create a new line
 
 
-  var container = $('<a href="colocaralgoaqui"></a>');
+  var container = $('<a href="restaurant.php?restid='+value.id+'"></a>');
   var line = $('<div class="searched_res"></div>');
 
   // Assemble new line

@@ -27,15 +27,11 @@
         $city = $_POST['city_input'];
     }else $city = null;
 
-    if(isset($_POST['country_input'])){
-        $country = $_POST['country_input'];
-    }else $country = null;
-
     if(isset($_POST['description_input'])){
         $description = $_POST['description_input'];
     }else $description = null;
 
-    $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$country,$description);
+    $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
 
     if($success == true)
         header('Location: ../profile.php?username='.$_SESSION['username']);

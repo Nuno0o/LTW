@@ -14,7 +14,7 @@ CREATE TABLE account(
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	user VARCHAR REFERENCES reviewers(user_id),
+	username VARCHAR REFERENCES account(username),
 	restaurant_id INTEGER REFERENCES restaurant,
 	review_date DATETIME,
 	review_text VARCHAR(5000) NOT NULL,

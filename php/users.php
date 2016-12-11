@@ -9,13 +9,13 @@
         }
     }
 
-    function updateUser($dbh,$user,$password,$email,$name,$birth,$city,$country,$description){
+    function updateUser($dbh,$user,$password,$email,$name,$birth,$city,$description){
         if($password == ""){
-             $stmt = $dbh->prepare('UPDATE account SET email=?,name=?,birth=?,city=?,country=?,description=? WHERE username=?');
-             return $stmt->execute(array($email,$name,$birth,$city,$country,$description,$user));
+             $stmt = $dbh->prepare('UPDATE account SET email=?,name=?,birth=?,city=?,description=? WHERE username=?');
+             return $stmt->execute(array($email,$name,$birth,$city,$description,$user));
         }else {
-            $stmt = $dbh->prepare('UPDATE account SET password=?,email=?,name=?,birth=?,city=?,country=?,description=? WHERE username=?');
-            return $stmt->execute(array(md5($password),$email,$name,$birth,$city,$country,$description,$user));
+            $stmt = $dbh->prepare('UPDATE account SET password=?,email=?,name=?,birth=?,city=?,description=? WHERE username=?');
+            return $stmt->execute(array(md5($password),$email,$name,$birth,$city,$description,$user));
         }
     }
 
