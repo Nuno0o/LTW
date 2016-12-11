@@ -36,6 +36,10 @@ function doSearch(){
 function showSearch(data){
     console.log(data[0]);
     $("#show_restaurants").empty();
+	
+	var resultsHead = $('<p class="resultsHead">Found these restaurants for the criteria inserted:</p>');
+	
+	$("#show_restaurants").append(resultsHead);
     $.each(data, lineReceived);
 }
 
@@ -43,7 +47,7 @@ function lineReceived(index, value) {
     // Create a new line
 
 
-  var container = $('<a href="restaurant.php?restid='+value.id+'"></a>');
+  var container = $('<a class="resultAnchor" href="restaurant.php?restid='+value.id+'">Read more</a>');
   var line = $('<div class="searched_res"></div>');
 
   // Assemble new line
@@ -51,10 +55,10 @@ function lineReceived(index, value) {
   line.append('<br>');
   line.append('<label class="rating">' + value.average_score + '</label>');
   line.append('<br>');
-  line.append('<label class="name">' + value.address + " " + value.city + " " + value.country + '</label>');
+  line.append('<label class="address">' + value.address + " " + value.city + " " + value.country + '</label>');
 
   // Add new line
-  container.append(line);
-  $("#show_restaurants").append(container);
+  line.append(container);
+  $("#show_restaurants").append(line);
 
 }

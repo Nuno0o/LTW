@@ -70,12 +70,10 @@
         <div id="restaurant_reviews">
             <?php
                 $reviews = getReviews($dbh,$_GET['restid']);
-                foreach($reviews as $review){
+                echo count($reviews);
+                foreach($reviews as &$review){
                     echo '<div class="review">';
-                    echo '<div class="review_user">' . $review['username'] . '</div>';
-                    echo '<div class="review_date">' . $review['review_date'] . '</div>';
-                    echo '<div class="review_score">' . $review['score'] . '</div>';
-                    echo '<div class="review_text">' . $review['review_text'] . '</div>';
+                    echo 'ola';
                     echo '</div>';
                 }
             ?>

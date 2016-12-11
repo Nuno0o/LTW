@@ -67,7 +67,11 @@ INSERT INTO account (username,password,email,name,birth,city,country,type,descri
 
 INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_price,description) VALUES
 	('user1','restaurante um',221234567,'restemail1@generico.com','rua generica 1','porto','portugal',10,'o melhor restaurante do distrito'),
-	('user1','restaurante dois',221234566,'restemail2@generico.com','rua generica 2','porto','portugal',20,'o 2 melhor restaurante do distrito');
+	('user1','restaurante dois',221234566,'restemail2@generico.com','rua generica 2','porto','portugal',20,'o 2 melhor restaurante do distrito'),
+	('user1','restaurante tres',221234566,'restemail2@generico.com','rua generica 3','porto','portugal',20,'o 3 melhor restaurante do distrito'),
+	('user1','restaurante quatro',221234566,'restemail2@generico.com','rua generica 4','porto','portugal',20,'o 4 melhor restaurante do distrito'),
+	('user1','restaurante cinco',221234566,'restemail2@generico.com','rua generica 5','porto','portugal',20,'o 5 melhor restaurante do distrito'),
+	('user1','restaurante seis',221234566,'restemail2@generico.com','rua generica 6','porto','portugal',20,'o 6 melhor restaurante do distrito');
 
 INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,2016-08-20,'muito bom sai de la bem alimentado',8);
 

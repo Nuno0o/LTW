@@ -203,17 +203,18 @@
 	visibility:hidden;
 }
 
-/*
+
 #not_found{
 	position:relative;
 	margin-bottom:0.5em;
 	font-size:4em;
+	height: 495px;
 }
-
+/*
 #search_form{
 	margin-left:45%;
 }
-*/
+
 /*
 
 #description_area{

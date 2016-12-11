@@ -44,6 +44,6 @@
  		</div>
 	</div>
 	<div id="show_restaurants" >
-		<p>colocar aqui imagem de boas vindas ou algo parecido, depois desaparece automaticamente</p>
+		<p id="welcome">Welcome to this restaurant reviews database. To start searching, type your criteria on the left. You can also look through our selections, too.</p>
 	</div>
 </div>
