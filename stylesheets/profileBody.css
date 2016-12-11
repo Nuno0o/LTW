@@ -21,10 +21,9 @@
 
 #profile_body{
 
-	float: left;
 	width: 100%;
 	min-width: 1000px;
-	height: 550px;
+	height: 100%;
 	border-bottom: 5px solid #C0B283;
 
 }

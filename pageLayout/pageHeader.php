@@ -19,17 +19,21 @@
 			<label id="incorrect">Incorrect username/password</label><br>
 			<?php endif;?>
 			<input id="login_btn" type="submit" value="Login">
-
 		</form>
 		<input id="register_btn" type="button" onclick="window.location = 'register.php';" value="Register">
+		
 		<?php else:?>
-		<form action="php/logout.php" method="post">
-			<label id="user_name"><?php echo $_SESSION['username']; ?></label>
-			<input id="logout_btn" type="submit" value="Logout">
-		</form>
+		
 		<form id="my_profile" action="profile.php<?php echo '?username=' . $_SESSION['username'];?>" method="post">
+			<label id="user_name"><?php echo $_SESSION['username']; ?></label>
+			<br>
 			<input id="profile_btn" type="submit" value="My Profile">
 		</form>
+
+		<form action="php/logout.php" method="post">
+			<input id="logout_btn" type="submit" value="Logout">
+		</form>
+		
 		<?php endif;?>
 	</div>
 </div>

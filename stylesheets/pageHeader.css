@@ -24,14 +24,12 @@
 }
 
 #login_area {
-	position: relative;
-
-	left:-150px;
+	position:relative;
 	margin:0 auto;
 	top:-7.5em;
 	height: 6em;
 
-	width:300px;
+	width:40%;
 
 	text-align: center;
 
@@ -55,7 +53,7 @@ input:focus{
 }
 
 #username_input {
-	float: right;
+
 	width: 150px;
 	margin-right: 1em;
 	border: 0;
@@ -70,7 +68,7 @@ input:focus{
 
 
 #password_input {
-	float: right;
+
 	width: 150px;
 	margin-right: 1em;
 	border: 0;
@@ -93,9 +91,7 @@ input:focus{
 }
 
 #login_btn {
-	float:right;
-	left:100;
-	margin-right: 17.5%;
+	margin-left: 17.5%;
 	border: 0;
 	background-color:inherit;
 	font-family: inherit;
@@ -106,8 +102,6 @@ input:focus{
 
 #logout_btn {
 	position:relative;
-	top:60px;
-	margin-right: 17.5%;
 	border: 0;
 	background-color:inherit;
 	font-family: inherit;
@@ -159,10 +153,8 @@ input:focus{
 	font-size: 1.4em;
 	color: #C0B283;
 	padding-right: 0.1em;
-	position: relative;
-	display: inline-block;
-	left: 40%;
 }
+
 #user_name:before{
 	content:'Welcome, ';
 }
@@ -171,9 +163,6 @@ input:focus{
 }
 
 #profile_btn {
-	position:relative;
-	left:80px;
-	margin-right: 17.5%;
 	border: 0;
 	background-color:inherit;
 	font-family: inherit;
