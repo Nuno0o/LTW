@@ -76,14 +76,3 @@
 	background-color: #C0B283;
 	transition: background-color 0.3s ease-in-out;
 }
-
-.norm_input{
-	border: 0;
-	height: 1em;
-	text-align: center;
-	font-family: 'Playfair Display', serif;
-
-	border-bottom: 2px solid #C0B283;
-	color: #DCD0C0;
-	background:transparent;
-}
