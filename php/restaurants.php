@@ -20,21 +20,19 @@ function changeRestPhone($dbh,$id,$phone){
 function changeRestEmail($dbh,$id,$email){
     $stmt = $dbh->prepare('UPDATE restaurant SET email = ? WHERE id = ?');
     $stmt->execute(array($email,$id));
-}
+}*/
 
-function getRestaurants($dbh,$string){
+function getRestaurantsByUser($dbh,$user){
     $stmt = $dbh->prepare(
         '
         SELECT *
-        FROM restaurant WHERE
-        name LIKE ? OR
-        city LIKE ? OR
-        address LIKE ?
+        FROM restaurants WHERE
+        owner_id = ?
         '
     );
-    $stmt->execute(array($string,$string,$string));
+    $stmt->execute(array($user));
     return $stmt->fetchAll();
-}*/
+}
 
 function getRestaurantsSearch($dbh,$name,$minprice,$maxprice,$location,$rating){
     $stmt = $dbh->prepare(

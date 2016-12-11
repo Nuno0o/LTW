@@ -26,7 +26,7 @@
                 <br><br>
                 <label >Bio</label>
                 <br><br>
-                <textarea id="description_area" rows="4" cols="75" name="description_input" form="edit_user"><?php echo $user['description'] ?></textarea>
+                <textarea id="description_area" rows="4" cols="45" name="description_input" form="edit_user"><?php echo $user['description'] ?></textarea>
                 <br><br>
                 <input id="submit_btn" type="submit" value=" Apply "> 
         </form>

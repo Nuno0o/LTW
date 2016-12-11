@@ -10,6 +10,9 @@
         <?php 
             include_once('./php/connectdb.php');
             include_once('./php/users.php');
+            include_once('./php/restaurants.php');
+            include_once('./php/reviews.php');
+
             $dbh = connectdb('./database/database.db');
 
             $user = getUser($dbh,$_GET['username']);
@@ -81,6 +84,26 @@
             <div id="profile_image">
                     aqui vai a imagem
             </div>
+
+            <?php
+                if($user['type'] == 'owner'){
+                    $owned_restaurants = getRestaurantsByUser($dbh,$_GET['username']);
+                    foreach($owned_restaurants as $owned_restaurant){
+                        echo '<div class="searched_res"';
+                        echo '<label class="name">' . $owned_restaurant['name'] . '</label>';
+                        echo '<label class="rating">' . $owned_restaurant['average_score'] . '</label>';
+                        echo '<label class="address">' . $owned_restaurant['address'] . ' '. $owned_restaurant['city'] . ' ' . $owned_restaurant['country'] . '</label>';
+                        echo '</div>';
+                    }
+                }else{
+                    $posted_reviews = getReviewsByUser($dbh,$_GET['username']);
+                    foreach($posted_reviews as $posted_review){
+                        echo '<div class="searched_res"';
+
+                        echo '</div>';
+                    }
+                }
+            ?>
             
         </div>
         <?php } ?>
