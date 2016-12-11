@@ -64,6 +64,14 @@
                     else echo 'This user has no description.';
                 ?>
             </div>
+            <?php
+            if($_GET['username'] == $_SESSION['username']){?>
+                <div id="user_edit_profile_btn">
+                <form action="profile_edit.php" method="post">
+                    <input id="edit_profile_btn" type="submit" value="Edit profile">
+                </form>
+                </div>
+            <?php } ?>
 
         <?php } ?>
     </div>
