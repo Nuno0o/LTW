@@ -9,6 +9,16 @@
         }
     }
 
+    function updateUser($dbh,$user,$password,$email,$name,$birth,$city,$country,$description){
+        if($password == ""){
+             $stmt = $dbh->prepare('UPDATE account SET email=?,name=?,birth=?,city=?,country=?,description=? WHERE username=?');
+             return $stmt->execute(array($email,$name,$birth,$city,$country,$description,$user));
+        }else {
+            $stmt = $dbh->prepare('UPDATE account SET password=?,email=?,name=?,birth=?,city=?,country=?,description=? WHERE username=?');
+            return $stmt->execute(array(md5($password),$email,$name,$birth,$city,$country,$description,$user));
+        }
+    }
+
     function getUser($dbh,$user){
         $stmt = $dbh->prepare('SELECT * FROM account WHERE username = ?');
         $stmt->execute(array($user));

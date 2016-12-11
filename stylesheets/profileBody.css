@@ -30,6 +30,7 @@
 
 #not_found{
 	position:relative;
+	margin-bottom:0.5em;
 	font-size:4em;
 }
 
@@ -54,6 +55,7 @@
 	font-weight:bold;
 	color:  #C0B283;
 	border-color: #C0B283;
+	margin-bottom:0.5em;
 }
 
 #edit_profile_btn:hover{
@@ -61,4 +63,15 @@
 	color: #373737;
 	background-color: #C0B283;
 	transition: background-color 0.3s ease-in-out;
+}
+
+#description_area{
+	background-color: #373737;
+	outline:none;
+	font-family: inherit;
+	font-weight:bold;
+	color:  #C0B283;
+	border-color:#C0B283;
+	border-width:2px;
+
 }

@@ -22,7 +22,7 @@
                 <br><br>
                 <label >Country</label>
                 <select id="input" name="country_input">
-    <option selected>(please select a country)</option>
+    <option selected disabled>(please select a country)</option>
     <option value="--">none</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>

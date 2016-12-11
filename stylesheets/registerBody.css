@@ -24,7 +24,7 @@
 	float: left;
 	width: 100%;
 	min-width: 1000px;
-	height: 550px;
+	height: 100%;
 	border-bottom: 5px solid #C0B283;
 
 }
@@ -42,8 +42,8 @@
 
 #submit_btn {
 	position:relative;
-	left:50px;
-	margin-right: 17.5%;
+	margin:0 auto;
+	margin-bottom:0.5em;
 	border-style:solid;
 	border-width: 5px;
 	background-color:inherit;
