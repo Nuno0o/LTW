@@ -47,6 +47,16 @@ CREATE TABLE comments(
 	comment_text VARCHAR(1000) NOT NULL
 );
 
+CREATE TRIGGER update_score AFTER INSERT ON reviews
+FOR EACH ROW
+BEGIN
+    UPDATE restaurants SET average_score = 
+    (SELECT AVG(score)
+     FROM reviews
+     WHERE reviews.restaurant_id = NEW.restaurant_id)
+    WHERE restaurants.id = NEW.restaurant_id;
+END;
+
 INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
 ('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias','1996-10-28','porto','portugal','owner','ola sou o tobias'),
 ('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao','1996-10-25','lisboa','portugal','reviewer','ola sou o joao'),
@@ -59,14 +69,5 @@ INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_
 	('user1','restaurante um',221234567,'restemail1@generico.com','rua generica 1','porto','portugal',10,'o melhor restaurante do distrito'),
 	('user1','restaurante dois',221234566,'restemail2@generico.com','rua generica 2','porto','portugal',20,'o 2 melhor restaurante do distrito');
 
-INSERT INTO reviews (user,restaurant_id,review_date,review_text,score) VALUES ('user2',1,2016-08-20,'muito bom sai de la bem alimentado',8);
+INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,2016-08-20,'muito bom sai de la bem alimentado',8);
 
-CREATE TRIGGER update_score AFTER INSERT ON reviews
-FOR EACH ROW
-BEGIN
-    UPDATE restaurants SET average_score = 
-    (SELECT AVG(score)
-     FROM reviews
-     WHERE reviews.restaurant_id = NEW.restaurant_id)
-    WHERE restaurants.id = NEW.restaurant_id;
-END;
