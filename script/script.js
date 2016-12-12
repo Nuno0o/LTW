@@ -55,7 +55,7 @@ function lineReceived(index, value) {
   line.append('<br>');
   line.append('<label class="rating">' + value.average_score + '</label>');
   line.append('<br>');
-  line.append('<label class="address">' + value.address + " " + value.city + " " + value.country + '</label>');
+  line.append('<label class="address">' + value.address + ", " + value.city + ", " + value.country + '</label>');
 
   // Add new line
   line.append(container);

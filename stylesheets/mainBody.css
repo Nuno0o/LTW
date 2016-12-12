@@ -176,6 +176,44 @@ a {
 	content: ' ★';
 }
 
+.review_rating:before{
+	content:'Rating: ';
+	font-size: 1.2em;
+	color: #C0B283;
+}
+
+.review_rating {
+	color: #DCD0C0;
+}
+
+.review_rating:after {
+	content: ' ★';
+}
+
+.review_text {
+	color: #DCD0C0;
+}
+
+.review_text:after{
+	color: #C0B283;
+	content: '"';
+}
+
+.review_text:before{
+	color: #C0B283;
+	content: '"';
+}
+
+.review_date:before{
+	color: #C0B283;
+	content: 'Date:';
+}
+
+.review_date{
+	color: #DCD0C0;
+	content: 'Date:';
+}
+
 .address:before{
 	content:'Address: ';
 	font-size: 1.2em;
