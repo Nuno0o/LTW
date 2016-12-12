@@ -149,6 +149,7 @@ a {
 	color: #C0B283;
 	text-decoration: none;
 	border-bottom: 2px solid #515151;
+	text-align:left;
 	padding: 1em;
 }
 
@@ -224,7 +225,6 @@ a {
 }
 
 .resultAnchor{
-	display:inline-block;
 	float: right;
 	border: 2px solid #C0B283;
 	background-color: #373737;
