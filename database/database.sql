@@ -23,6 +23,18 @@ CREATE TABLE reviews(
 	CHECK(score <= 10)
 );
 
+DROP TABLE IF EXISTS profile_image;
+CREATE TABLE profile_image(
+	username VARCHAR REFERENCES account(username),
+	image BLOB
+);
+
+DROP TABLE IF EXISTS restaurant_image;
+CREATE TABLE restaurant_image(
+	id VARCHAR REFERENCES restaurants(id),
+	image BLOB
+);
+
 DROP TABLE IF EXISTS restaurants;
 CREATE TABLE restaurants(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
