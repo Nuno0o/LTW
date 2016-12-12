@@ -192,7 +192,30 @@ a {
 }
 
 .review_text {
+	float: left;
+	word-wrap:break-word;
+	width: 78%;
+	max-height: 5em;
 	color: #DCD0C0;
+	background-color: #2A2A2A;
+	border-left: 3px double #C0B283;
+	margin-top: 0.5em;
+	display:block;
+	padding:0.3em;
+	overflow: auto;
+	text-align: justify;
+}
+
+.review_text::-webkit-scrollbar {
+    width: 12px;
+}
+.review_text::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 30px rgba(22,22,22,1); 
+    background-color:#373737;
+}
+.review_text::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,1); 
+    background-color: #C0B283;
 }
 
 .review_text:after{

@@ -151,15 +151,6 @@
 	color: #DCD0C0;
 }
 
-#profile_description{
-	float:left;
-	width: 97%;
-	min-width: 100px;
-	height: 70px;
-	text-align: justify;
-	color: #DCD0C0;
-}
-
 #profile_description:before{
 	display:block;
 	text-align: left;
@@ -167,6 +158,19 @@
 	font-style: bold;
 	content: 'Profile Bio: ';
 	color: #C0B283;
+	background-color: #373737;
+}
+
+#profile_description{
+	float:left;
+	max-width: 97%;
+	width: 97%;
+	word-wrap: break-word;
+	min-width: 100px;
+	height: 70px;
+	text-align: justify;
+	color: #DCD0C0;
+	background-color: #2A2A2A;
 }
 
 #user_edit_profile_btn{
@@ -238,6 +242,7 @@
     -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,1); 
     background-color: #C0B283;
 }
+
 /*
 #search_form{
 	margin-left:45%;

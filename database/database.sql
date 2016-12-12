@@ -85,5 +85,5 @@ INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_
 	('user1','restaurante cinco',221234566,'restemail2@generico.com','rua generica 5','porto','portugal',20,'o 5 melhor restaurante do distrito'),
 	('user1','restaurante seis',221234566,'restemail2@generico.com','rua generica 6','porto','portugal',20,'o 6 melhor restaurante do distrito');
 
-INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,'2016-08-20','muito bom sai de la bem alimentado',8);
+INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,'2016-08-20','muito bom sai de la bem alimentadododdddddddddddddddddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',8);
 
