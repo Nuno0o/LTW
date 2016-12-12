@@ -17,77 +17,84 @@
             }else{
         ?>
         <br>
-        <div id="restaurant_name">
-            <?php echo $restaurant['name'];?>
+        <div id="restaurant_name_and_edit">
+            <div id="restaurant_name">
+                <?php echo $restaurant['name'];?>
+            </div>
+            <?php
+                if(isset($_SESSION['username'])){
+                if($restaurant['owner_id'] == $_SESSION['username']){
+                ?>
+                    <div id="restaurant_edit_btn">
+                    <form action="restaurant_edit.php" method="post">
+                        <input id="edit_profile_btn" type="submit" value=" Edit ">
+                    </form>
+                    </div>
+            <?php }} ?>
         </div>
-        <div id="restaurant_image">
-            aqui vai a imagem
-        </div>
+         <div id= "restaurant_area">   
+            <div id="restaurant_image">
+                aqui vai a imagem
+            </div>
+            <div id="restaurant_information">
+                <div id="restaurant_header">
+                        Account Details:
+                </div>
+                <div id="restaurant_contact">
+                    <?php 
+                        if($restaurant['phone'] != null)
+                            echo '<label id="restaurant_phone">'.$restaurant['phone']."</label>";
+                        if($restaurant['email'] != null && $restaurant['phone'] != null)
+                            echo '<br>';
+                        if($restaurant['email'] != null)
+                        echo '<label id="restaurant_email">'.$restaurant['email']."</label>";
+                    ?>
+                </div>
+                <div id="restaurant_local">
+                    <?php 
+                        if($restaurant['address'] != null)
+                             echo '<label id="restaurant_address">'.$restaurant['address']."</label>";
+                        if($restaurant['address'] != null && $restaurant['city'] != null || $restaurant['address'] != null && $restaurant['country'] != null )
+                            echo ', ';
+                        if($restaurant['city'] != null)
+                             echo '<label id="restaurant_city">'.$restaurant['city']."</label>";
+                        if($restaurant['city'] != null && $restaurant['country'] != null)
+                            echo ', ';   
+                        if($restaurant['country'] != null)
+                             echo '<label id="restaurant_country">'.$restaurant['country']."</label>";
+                    ?>
+                </div>
+                <div id="restaurant_avg_price">
+                    <?php 
+                        if($restaurant['average_price'] != null)
+                            echo '<label id="restaurant_avgprice">'.$restaurant['average_price']."</label>";
+                    ?>
+                </div>
 
-        <div id="restaurant_contact">
-            <?php 
-                if($restaurant['phone'] != null)
-                    echo 'Phone:'.$restaurant['phone'];
-                if($restaurant['email'] != null && $restaurant['phone'] != null)
-                    echo '<br>';
-                if($restaurant['email'] != null)
-                echo 'Email:'.$restaurant['email'];
-            ?>
-        </div>
-        <div id="restaurant_local">
-            <?php 
-                if($restaurant['address'] != null)
-                    echo $restaurant['address'];
-                if($restaurant['address'] != null && $restaurant['city'] != null || $restaurant['address'] != null && $restaurant['country'] != null )
-                    echo '<br>';
-                if($restaurant['city'] != null)
-                    echo $restaurant['city'];
-                if($restaurant['city'] != null && $restaurant['country'] != null)
-                    echo ', ';   
-                if($restaurant['country'] != null)
-                    echo $restaurant['country'];
-            ?>
-        </div>
-        <div id="restaurant_avg_price">
-            <?php 
-                if($restaurant['average_price'] != null)
-                    echo 'Average price:'.$restaurant['average_price'];
-            ?>
-        </div>
-
-        <div id="restaurant_avg_score">
-            <?php 
-                if($restaurant['average_score'] != null)
-                    echo 'Average score:'.$restaurant['average_score'];
-            ?>
-        </div>
-        <div id="restaurant_description">
-            <?php 
-                if($restaurant['description'] != null)
-                    echo $restaurant['description'];
-            ?>
+                <div id="restaurant_avg_score">
+                    <?php 
+                        if($restaurant['average_score'] != null)
+                             echo '<label id="restaurant_avgscore">'.$restaurant['average_score']."</label>";
+                    ?>
+                </div>
+                <div id="restaurant_description">
+                    <?php 
+                        if($restaurant['description'] != null)
+                            echo '<label id="restaurant_bio">'.$restaurant['description']."</label>";
+                    ?>
+                </div>
+            </div>
         </div>
         <div id="restaurant_reviews">
             <?php
+                echo '<label id="review_list_header">USER SUBMITED REVIEWS</label>';
                 $reviews = getReviews($dbh,$_GET['restid']);
-                echo count($reviews);
                 foreach($reviews as &$review){
                     echo '<div class="review">';
-                    echo 'ola';
                     echo '</div>';
                 }
             ?>
         </div>
-        <?php
-            if(isset($_SESSION['username'])){
-            if($restaurant['owner_id'] == $_SESSION['username']){
-            ?>
-                <div id="restaurant_edit_btn">
-                <form action="restaurant_edit.php" method="post">
-                    <input id="edit_profile_btn" type="submit" value=" Edit ">
-                </form>
-                </div>
-        <?php }} ?>
         <?php } ?>
     </div>
 </div>

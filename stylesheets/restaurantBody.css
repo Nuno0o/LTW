@@ -1,3 +1,185 @@
-#restaurant_name{
-	font-size:3em;
+#restaurant_name_and_edit{
+	margin-top: 1.5em;
+	width: 100%;
 }
+
+#restaurant_name {
+	float:left;
+	text-align:left;
+	font-size: 2.9em;
+}
+
+#restaurant_edit_btn{
+	background-color:inherit;
+	font-family: inherit;
+	color:  #C0B283;
+	border: 1px solid #C0B283;
+	float:right;
+	margin-top: 1%;
+}
+
+#restaurant_area {
+	display: block;
+	float: left;
+	width: 39%;
+	height: 447px;
+	max-height: 450px;
+	overflow: auto;
+	border-right: 3px solid #C0B283;
+	margin-top:0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#restaurant_area::-webkit-scrollbar {
+    width: 12px;
+}
+
+#restaurant_area::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 30px rgba(22,22,22,1); 
+    background-color:#373737;
+}
+
+#restaurant_area::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,1); 
+    background-color: #C0B283;
+}
+
+#restaurant_image{
+	float: left;
+	width: 100%;
+	height: 200px;
+	overflow:auto;
+	border: 0;
+}
+
+#restaurant_information{
+	float: left;
+	text-align: left;
+	min-width: 200px;
+	height: 231px;
+}
+
+#restaurant_information div{
+	width: 100%;
+}
+
+#restaurant_header{
+	font-size: 2em;
+	text-align: left;
+	font-style: bold;
+}
+
+#restaurant_phone:before{
+	color: #C0B283;
+	content:'Phone: ';
+	font-size:1.2em;
+}
+#restaurant_phone{
+	color: #DCD0C0;
+}
+
+#restaurant_email:before{
+	color: #C0B283;
+	content:'E-mail: ';
+	font-size:1.2em;
+}
+#restaurant_email{
+	color: #DCD0C0;
+}
+
+#restaurant_address:before{
+	color: #C0B283;
+	content:'Address: ';
+	font-size:1.2em;
+}
+#restaurant_address{
+	color: #DCD0C0;
+}
+#restaurant_city{
+	color: #DCD0C0;
+}
+#restaurant_country{
+	color: #DCD0C0;
+}
+
+#restaurant_avgprice:before{
+	color: #C0B283;
+	content:'Average Price: ';
+	font-size:1.2em;
+}
+#restaurant_avgprice{
+	color: #DCD0C0;
+}
+#restaurant_avgprice:after{
+	content:'€';
+}
+
+#restaurant_avgscore:before{
+	color: #C0B283;
+	content:'Average Score From Reviews: ';
+	font-size:1.2em;
+}
+#restaurant_avgscore{
+	color: #DCD0C0;
+}
+#restaurant_avgscore:after{
+	content: ' ★';
+}
+
+#restaurant_bio:before{
+	display:block;
+	text-align: left;
+	font-size: 1.2em;
+	font-style: bold;
+	content: 'More Information: ';
+	color: #C0B283;
+	background-color: #373737;
+}
+#restaurant_bio{
+	float:left;
+	max-width: 97%;
+	width: 97%;
+	word-wrap: break-word;
+	min-width: 100px;
+	height: 70px;
+	text-align: justify;
+	color: #DCD0C0;
+	background-color: #2A2A2A;
+}
+
+#review_list_header{
+	display:block;
+	padding-top: 1em;
+	margin-left: 15%;
+	border-bottom: 3px solid #C0B283;
+	width: 70%;
+}
+
+#restaurant_reviews{
+	width: 60%;
+	float:right;
+	height:443px;
+	max-height: 443px;
+	overflow:auto;
+}
+
+#restaurant_reviews::-webkit-scrollbar {
+    width: 12px;
+}
+
+#restaurant_reviews::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 30px rgba(22,22,22,1); 
+    background-color:#373737;
+}
+
+#restaurant_reviews::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,1); 
+    background-color: #C0B283;
+}
+
+.reviews{
+	width:100%;
+}
+
+
