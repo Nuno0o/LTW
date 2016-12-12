@@ -152,6 +152,7 @@ a {
 	padding: 1em;
 }
 
+
 .name:before{
 	content:'Name: ';
 	font-size: 1.2em;
@@ -170,10 +171,6 @@ a {
 .rating {
 	color: #DCD0C0;
 }
-
-/*
-	TEMP
-*/
 
 .rating:after {
 	content: ' ★';
