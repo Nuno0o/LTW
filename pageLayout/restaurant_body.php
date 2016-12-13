@@ -26,15 +26,13 @@
                 if($restaurant['owner_id'] == $_SESSION['username']){
                 ?>
                     <div id="restaurant_edit_btn">
-                    <form action="restaurant_edit.php" method="post">
-                        <input id="edit_profile_btn" type="submit" value=" Edit ">
-                    </form>
+                        <a href="restaurant_edit.php?restid=<?php echo $restaurant['id']; ?>" id="edit_profile_btn"> &nbspEdit Restaurant&nbsp </a>
                     </div>
             <?php }} ?>
         </div>
          <div id= "restaurant_area">   
             <div id="restaurant_image">
-                aqui vai a imagem
+                <img src="resources/<?php echo $restaurant['image'];?>" style="width:300px;height:90%;">
             </div>
             <div id="restaurant_information">
                 <div id="restaurant_header">

@@ -30,9 +30,7 @@
                 <?php
                 if($_GET['username'] == $_SESSION['username']){?>
                     <div id="user_edit_profile_btn">
-                    <form action="profile_edit.php" method="post">
-                        <input id="edit_profile_btn" type="submit" value="Edit profile">
-                    </form>
+                    <a id="edit_profile_btn" href="profile_edit.php" > &nbspEdit Profile&nbsp </a>
                     </div>
                 <?php } ?>  
             </div>

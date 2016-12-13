@@ -21,6 +21,17 @@ function changeRestEmail($dbh,$id,$email){
     $stmt = $dbh->prepare('UPDATE restaurant SET email = ? WHERE id = ?');
     $stmt->execute(array($email,$id));
 }*/
+function updateRestaurant($dbh,$id,$name,$phone,$email,$price,$address,$city,$description){
+    $stmt = $dbh->prepare('UPDATE restaurants SET name=?,phone=?,email=?,average_price=?,address=?,city=?,description=? WHERE id=?');
+    return $stmt->execute(array($name,$phone,$email,$price,$address,$city,$description,$id));
+}
+
+function updateRestImage($dbh,$id,$image){
+    $stmt = $dbh->prepare('UPDATE restaurants SET image = ? WHERE id = ?');
+    $stmt->execute(array($image,$id));
+
+    return $stmt->rowCount() ? true : false;
+}
 
 function getRestaurantsByUser($dbh,$user){
     $stmt = $dbh->prepare(
@@ -33,6 +44,8 @@ function getRestaurantsByUser($dbh,$user){
     $stmt->execute(array($user));
     return $stmt->fetchAll();
 }
+
+
 
 function getRestaurantsSearch($dbh,$name,$minprice,$maxprice,$location,$rating){
     $stmt = $dbh->prepare(

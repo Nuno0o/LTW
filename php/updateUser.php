@@ -31,16 +31,23 @@
         $description = $_POST['description_input'];
     }else $description = null;
 
+
     $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
+    
+    //Se foi inserida uma imagem
     if(isset($_FILES['fileToUpload']['name']) && !empty($_FILES['fileToUpload']['name'])){
         include_once('saveImage.php');
-        echo $path_parts['basename'];
         $success2 = updateImage($dbh,$user,$new_path_parts['basename']);
     }else{
         $uploadOk = true;
         $success2 = true;
     }
-    if($uploadOk == true && $success == true && $success2 == true)
+    //Se foi inserida uma pass nova
+    if($pass != ""){
+        $success3 = updateUserPassword($dbh,$user,$pass);
+    }else $success3 = true;
+
+    if($uploadOk == true && $success == true && $success2 == true && $success3 == true)
         header('Location: ../profile.php?username='.$user);
     else 
         header('Location: ../profile_edit.php');
