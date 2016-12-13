@@ -101,7 +101,7 @@
             <?php
             if($reviewerInPage == true){ ?>
             <form id="post_review" action="php/addReview.php" method="post">
-                <label>Post a review</label>
+                <label>Post a review: </label>
                 <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
                 <input id="input" type="number" name="input_score" min="0" max="10" placeholder="1-10" required><br>
                 <textarea id="description_area" rows="4" cols="45" name="input_text" form="post_review" required></textarea><br>

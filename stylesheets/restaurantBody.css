@@ -181,4 +181,11 @@
 	width:100%;
 }
 
+#post_review{
+	width: 70%;
+	margin-left: 15%;
+}
 
+#post_review #input{
+	margin-left: 30%;
+}
