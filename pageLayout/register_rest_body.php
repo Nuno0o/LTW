@@ -1,24 +1,24 @@
 <div id="register_body">
 	<div id="register_area">
-        <form action="php/register.php" method="post">
+        <form action="php/register_rest.php" method="post">
                 <br><br>
-				<label >Username</label>
-				<input id="input" name="username_input" type="text" required>
+				<label >Name</label>
+				<input id="input" name="name_input" type="text" required>
                 <br><br>
-                <label >Password</label>
-				<input id="input" name="password_input" type="password" required>
+                <label >Phone</label>
+				<input id="input" name="phone_input" type="number">
                 <br><br>
                 <label >Email</label>
 				<input id="input" name="email_input" type="text">
                 <br><br>
-                <label >Name</label>
-				<input id="input" name="name_input" type="text">
+                <label >Average price</label>
+				<input id="input" name="price_input" type="number" required>
                 <br><br>
-                <label >Birthdate</label>
-				<input id="input" name="birth_input" type="date">
+                <label >Address</label>
+				<input id="input" name="address_input" type="text" required>
                 <br><br>
                 <label >City</label>
-				<input id="input" name="city_input" type="text">
+				<input id="input" name="city_input" type="text" required>
                 <br><br>
                 <label >Country</label>
                 <select id="input" name="country_input" required>
@@ -271,12 +271,6 @@
 <option value="Zambia">Zambia</option>
 <option value="Zimbabwe">Zimbabwe</option>
 </select>   
-            <br><br>
-            <label >User type</label>
-            <select id="input" name="type_input">
-                <option value="reviewer">Reviewer</option>
-                <option value="owner">Owner</option>
-            </select>
             <br><br>
             <input id="submit_btn" type="submit" value="Create"> 
         </form>

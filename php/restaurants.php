@@ -1,11 +1,11 @@
 <?php
 
-/*function addRestaurant($dbh,$name,$address,$city,$country,$description){
-    $stmt = $dbh->prepare('INSERT INTO restaurant (name,address,city,country,description) VALUES (?,?,?,?,?)');
-    $stmt->execute(array($name,$address,$city,$country,$description));
+function addRestaurant($dbh,$user,$name,$phone,$email,$address,$city,$country,$price){
+    $stmt = $dbh->prepare('INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_price) VALUES (?,?,?,?,?,?,?,?)');
+    $stmt->execute(array($user,$name,$phone,$email,$address,$city,$country,$price));
 
     return $stmt->rowCount() ? true : false;
-}*/
+}
 
 function updateRestaurant($dbh,$id,$name,$phone,$email,$price,$address,$city,$description){
     $stmt = $dbh->prepare('UPDATE restaurants SET name=?,phone=?,email=?,average_price=?,address=?,city=?,description=? WHERE id=?');

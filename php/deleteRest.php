@@ -6,7 +6,11 @@
     
     $dbh = connectdb('../database/database.db');
 
-    $success = deleteRestaurant($dbh,$_POST['restid']);
+    $restaurant = getRestaurantFromId($dbh,$_POST['restid']);
+
+    if($restaurant['owner_id'] == $_SESSION['username'])
+        $success = deleteRestaurant($dbh,$_POST['restid']);
+    else $success = true;
 
     if($success == true)
         header('Location: ../restaurant.php?restid='.$_POST['restid']);

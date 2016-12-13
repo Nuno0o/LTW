@@ -1,3 +1,4 @@
+PRAGMA foreign_key = on;
 DROP TABLE IF EXISTS account;
 CREATE TABLE account(
 	username VARCHAR(16) PRIMARY KEY NOT NULL,
@@ -27,7 +28,7 @@ CREATE TABLE reviews(
 DROP TABLE IF EXISTS restaurants;
 CREATE TABLE restaurants(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	owner_id VARCHAR(16) REFERENCES owners(user_id),
+	owner_id VARCHAR(16) REFERENCES account(username) NOT NULL,
 	name VARCHAR(50) NOT NULL,
 	phone INTEGER(15),
 	email VARCHAR(254),
@@ -35,7 +36,7 @@ CREATE TABLE restaurants(
 	city VARCHAR(50) NOT NULL,
 	country VARCHAR(50) NOT NULL,
 	average_price INTEGER(15) NOT NULL,
-	description VARCHAR(1000) NOT NULL,
+	description VARCHAR(1000),
 	average_score INTEGER DEFAULT 5,
 	image VARCHAR(32) DEFAULT 'generic_rest.png'
 );

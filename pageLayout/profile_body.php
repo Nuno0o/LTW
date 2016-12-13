@@ -31,6 +31,9 @@
                 if($_GET['username'] == $_SESSION['username']){?>
                     <div id="user_edit_profile_btn">
                     <a id="edit_profile_btn" href="profile_edit.php" > &nbspEdit Profile&nbsp </a>
+                    <?php if($user['type'] == 'owner'){ ?>
+                    <a id="edit_profile_btn" href="register_rest.php" > &nbspNew Restaurant&nbsp </a>
+                    <?php } ?>
                     </div>
                 <?php } ?>  
             </div>

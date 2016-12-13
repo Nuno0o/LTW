@@ -12,8 +12,7 @@
             $restaurant = getRestaurantFromId($dbh,$_GET['restid']);
 
             if($restaurant == null){
-                echo '<div id="not_found">Restaurant not found</div>';
-                
+                echo '<div id="not_found">Restaurant not found</div>';  
             }else{
         ?>
         <br>
@@ -40,7 +39,7 @@
             </div>
             <div id="restaurant_information">
                 <div id="restaurant_header">
-                        Account Details:
+                        Restaurant Details:
                 </div>
                 <div id="restaurant_contact">
                     <?php 
