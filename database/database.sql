@@ -60,6 +60,13 @@ BEGIN
     WHERE restaurants.id = NEW.restaurant_id;
 END;
 
+CREATE TRIGGER update_user_reviews AFTER DELETE ON restaurants
+FOR EACH ROW
+BEGIN
+	DELETE FROM reviews
+	WHERE reviews.restaurant_id = OLD.id;
+END;
+
 INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
 ('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias','1996-10-28','porto','portugal','owner','ola sou o tobias'),
 ('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao','1996-10-25','lisboa','portugal','reviewer','ola sou o joao'),
