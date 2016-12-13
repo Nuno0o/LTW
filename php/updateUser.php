@@ -32,8 +32,7 @@
     }else $description = null;
 
     $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
-
-    if(isset($_FILES["fileToUpload"])){
+    if(isset($_FILES['fileToUpload']['name']) && !empty($_FILES['fileToUpload']['name'])){
         include_once('saveImage.php');
         echo $path_parts['basename'];
         $success2 = updateImage($dbh,$user,$new_path_parts['basename']);

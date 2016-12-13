@@ -51,18 +51,22 @@
                         <?php 
                             if($user['name'] != null)
                                  echo $user['name'];
-                            else echo 'Unkown birthday';
+                            else echo 'Unknown';
                         ?>
                     </div>
                     <div id="profile_email">
-                        <?php echo $user['email'];?>
+                        <?php 
+                            if($user['email'] != null)
+                                 echo $user['email'];
+                            else echo 'Unknown';
+                        ?>
                     </div>
 
                     <div id="profile_birthdate">
                         <?php 
                             if($user['birth'] != null)
                                  echo $user['birth'];
-                            else echo 'Unkown birthday';
+                            else echo 'Unknown';
                         ?>
                     </div>
                     <div id="profile_place">
