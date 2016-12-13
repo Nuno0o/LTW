@@ -7,7 +7,9 @@
 
             $user = getUser($dbh,$_SESSION['username']);
         ?>
-        <form id="edit_user" action="php/updateUser.php" method="post">
+        <form id="edit_user" enctype="multipart/form-data" action="php/updateUser.php" method="post">
+                <br><br>
+                <input id="input" name="fileToUpload" type="file">
                 <br><br>
                 <label >Password</label>
 				<input id="input" name="password_input" type="password" placeholder="Type to update" value="">

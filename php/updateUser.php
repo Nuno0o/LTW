@@ -33,8 +33,18 @@
 
     $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
 
-    if($success == true)
-        header('Location: ../profile.php?username='.$_SESSION['username']);
-    else header('Location: ../register.php');
+    if(isset($_FILES["fileToUpload"])){
+        include_once('saveImage.php');
+        echo $path_parts['basename'];
+        $success2 = updateImage($dbh,$user,$new_path_parts['basename']);
+    }else{
+        $uploadOk = true;
+        $success2 = true;
+    }
+    if($uploadOk == true && $success == true && $success2 == true)
+        header('Location: ../profile.php?username='.$user);
+    else 
+        header('Location: ../profile_edit.php');
+
     exit();
 ?>

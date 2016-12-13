@@ -38,7 +38,7 @@
             </div>
             <div id= "account" />
                 <div id="profile_image">
-                        aqui vai a imagem
+                    <img src="resources/<?php echo $user['image'];?>" style="width:300px;height:90%;">
                 </div>
                 <div id="account_details">
                     <div id="account_header">

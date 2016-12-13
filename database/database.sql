@@ -8,7 +8,8 @@ CREATE TABLE account(
 	city VARCHAR(50),
 	country VARCHAR(50),
 	description VARCHAR(256),
-	type VARCHAR(10)
+	type VARCHAR(10),
+	image VARCHAR(32) DEFAULT 'generic_user.png'
 );
 
 DROP TABLE IF EXISTS reviews;
@@ -23,18 +24,6 @@ CREATE TABLE reviews(
 	CHECK(score <= 10)
 );
 
-DROP TABLE IF EXISTS profile_image;
-CREATE TABLE profile_image(
-	username VARCHAR REFERENCES account(username),
-	image BLOB
-);
-
-DROP TABLE IF EXISTS restaurant_image;
-CREATE TABLE restaurant_image(
-	id VARCHAR REFERENCES restaurants(id),
-	image BLOB
-);
-
 DROP TABLE IF EXISTS restaurants;
 CREATE TABLE restaurants(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +36,8 @@ CREATE TABLE restaurants(
 	country VARCHAR(50) NOT NULL,
 	average_price INTEGER(15) NOT NULL,
 	description VARCHAR(1000) NOT NULL,
-	average_score INTEGER DEFAULT 5
+	average_score INTEGER DEFAULT 5,
+	image VARCHAR(32) DEFAULT 'generic_rest.png'
 );
 
 DROP TABLE IF EXISTS comments;

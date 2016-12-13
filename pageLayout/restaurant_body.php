@@ -90,7 +90,14 @@
                 echo '<label id="review_list_header">USER SUBMITED REVIEWS</label>';
                 $reviews = getReviews($dbh,$_GET['restid']);
                 foreach($reviews as &$review){
-                    echo '<div class="review">';
+                    echo '<div class="searched_res">';
+                    echo '<label class="name">' . $review['username']. '</label>';
+                    echo '<br>';
+                    echo '<label class="review_rating">' . $review['score']. '</label>';
+                    echo '<br>';
+                    echo '<label class="review_date">' . $review['review_date']. '</label>';
+                    echo '<br>';
+                    echo '<label class="review_text">' . $review['review_text'] . '</label>';
                     echo '</div>';
                 }
             ?>

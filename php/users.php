@@ -53,4 +53,11 @@
 
         return $stmt->rowCount() ? true : false;
     }
+
+    function updateImage($dbh,$user,$image){
+        $stmt = $dbh->prepare('UPDATE account SET image = ? WHERE username = ?');
+        $stmt->execute(array($image,$user));
+
+        return $stmt->rowCount() ? true : false;
+    }
 ?>
