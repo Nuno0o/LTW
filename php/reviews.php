@@ -6,7 +6,7 @@ function getReviews($dbh,$restaurant){
         SELECT *
         FROM reviews WHERE
         restaurant_id = ?
-        ORDER BY review_date DESC
+        ORDER BY review_date ASC
         '
     );
     $stmt->execute(array($restaurant));
@@ -26,5 +26,11 @@ function getReviewsByUser($dbh,$user){
     return $stmt->fetchAll();
 }
 
+function addReviewToRest($dbh,$user,$restid,$date,$text,$score){
+    $stmt = $dbh->prepare('INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES(?,?,?,?,?)');
+    $stmt->execute(array($user,$restid,$date,$text,$score));
+
+    return $stmt->rowCount() ? true : false;
+}
 
 ?>

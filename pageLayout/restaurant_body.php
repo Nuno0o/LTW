@@ -11,6 +11,16 @@
 
             $restaurant = getRestaurantFromId($dbh,$_GET['restid']);
 
+            $user = getUser($dbh,$_SESSION['username']);
+
+            if($user != null && $user['type'] == 'reviewer'){
+                $reviewerInPage = true;
+            }else $reviewerInPage = false;
+
+            if($restaurant['owner_id'] == $_SESSION['username']){
+                $ownerInPage = true;
+            }else $ownerInPage = false;
+
             if($restaurant == null){
                 echo '<div id="not_found">Restaurant not found</div>';  
             }else{
@@ -22,7 +32,7 @@
             </div>
             <?php
                 if(isset($_SESSION['username'])){
-                if($restaurant['owner_id'] == $_SESSION['username']){
+                if($ownerInPage){
                 ?>
                     <form action="php/deleteRest.php" method="post" style="float:right;">
                         <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
@@ -87,6 +97,19 @@
             </div>
         </div>
         <div id="restaurant_reviews">
+            
+            <?php
+            if($reviewerInPage == true){ ?>
+            <form id="post_review" action="php/addReview.php" method="post">
+                <label>Post a review</label>
+                <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
+                <input id="input" type="number" name="input_score" min="0" max="10" placeholder="1-10" required><br>
+                <textarea id="description_area" rows="4" cols="45" name="input_text" form="post_review" required></textarea><br>
+                <input type="submit" value=" Send " id="edit_profile_btn"> 
+            </form>
+            <?php } ?>
+            
+            
             <?php
                 echo '<label id="review_list_header">USER SUBMITED REVIEWS</label>';
                 $reviews = getReviews($dbh,$_GET['restid']);
