@@ -7,6 +7,13 @@
             $dbh = connectdb('./database/database.db');
 
             $restaurant = getRestaurantFromId($dbh,$_GET['restid']);
+
+            if($restaurant == null){
+                echo '<div id="not_found">Restaurant not found</div>';  
+            }else if(isset($_SESSION['username']) && $restaurant['owner_id'] != $_SESSION['username']){
+                echo '<div id="not_found">You don\'t own this restaurant</div>'; 
+            }
+            else{
         ?>
         <form id="edit_rest" enctype="multipart/form-data" action="php/updateRestaurant.php" method="post">
                 <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
@@ -37,5 +44,6 @@
                 <br><br>
                 <input id="submit_btn" type="submit" value=" Apply "> 
         </form>
+            <?php } ?>
     </div>
 </div>
