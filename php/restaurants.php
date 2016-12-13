@@ -5,22 +5,8 @@
     $stmt->execute(array($name,$address,$city,$country,$description));
 
     return $stmt->rowCount() ? true : false;
-}
-
-function changeRestDescription($dbh,$id,$description){
-    $stmt = $dbh->prepare('UPDATE restaurant SET description = ? WHERE id = ?');
-    $stmt->execute(array($description,$id));
-}
-
-function changeRestPhone($dbh,$id,$phone){
-    $stmt = $dbh->prepare('UPDATE restaurant SET phone = ? WHERE id = ?');
-    $stmt->execute(array($phone,$id));
-}
-
-function changeRestEmail($dbh,$id,$email){
-    $stmt = $dbh->prepare('UPDATE restaurant SET email = ? WHERE id = ?');
-    $stmt->execute(array($email,$id));
 }*/
+
 function updateRestaurant($dbh,$id,$name,$phone,$email,$price,$address,$city,$description){
     $stmt = $dbh->prepare('UPDATE restaurants SET name=?,phone=?,email=?,average_price=?,address=?,city=?,description=? WHERE id=?');
     return $stmt->execute(array($name,$phone,$email,$price,$address,$city,$description,$id));
@@ -32,6 +18,14 @@ function updateRestImage($dbh,$id,$image){
 
     return $stmt->rowCount() ? true : false;
 }
+
+function deleteRestaurant($dbh,$id){
+    $stmt = $dbh->prepare('DELETE FROM restaurants WHERE id=?');
+    $stmt->execute(array($id));
+
+    return $stmt->rowCount() ? true : false;
+}
+
 
 function getRestaurantsByUser($dbh,$user){
     $stmt = $dbh->prepare(

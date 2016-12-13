@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	username VARCHAR REFERENCES account(username),
-	restaurant_id INTEGER REFERENCES restaurant,
+	restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
 	review_date DATETIME,
 	review_text VARCHAR(5000) NOT NULL,
 	score INTEGER NOT NULL,

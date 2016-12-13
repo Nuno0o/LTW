@@ -25,6 +25,10 @@
                 if(isset($_SESSION['username'])){
                 if($restaurant['owner_id'] == $_SESSION['username']){
                 ?>
+                    <form action="php/deleteRest.php" method="post" style="float:right;">
+                        <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
+                        <input id="edit_profile_btn" type="submit" value=" Delete " onclick="if (!confirm('Are you sure you want to delete this restaurant?')) return false;"> 
+                    </form>
                     <div id="restaurant_edit_btn">
                         <a href="restaurant_edit.php?restid=<?php echo $restaurant['id']; ?>" id="edit_profile_btn"> &nbspEdit Restaurant&nbsp </a>
                     </div>
