@@ -92,3 +92,30 @@ function replyArea(event){
                 '<input type="submit" value=" Send " id="edit_profile_btn">'+
             '</form>');
 }
+
+function initMap() {
+        var map = new google.maps.Map(document.getElementById('google_maps_div'), {
+          zoom: 16,
+          center: {lat: 0, lng: 0}
+        });
+
+        google.maps.event.trigger( map, 'resize' );
+
+        var geocoder = new google.maps.Geocoder();
+
+        var address = document.getElementById('restaurant_address').innerHTML;
+
+        var full_address = address;
+
+        geocoder.geocode({'address': full_address}, function(results, status) {
+          if (status === 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+}

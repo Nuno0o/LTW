@@ -15,5 +15,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
 		<script src="script/jquery.js"></script>
 		<script src="script/script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS-j4FHPS-fYXAUX0HbN1U1cuqXTb9YUk&callback=initMap"></script>
 	</head>
 	<body>
