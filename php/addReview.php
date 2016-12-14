@@ -9,7 +9,7 @@
 
     $currDate = getdate();
 
-    $success = addReviewToRest($dbh,$_SESSION['username'],$_POST['restid'],$currDate['year'].$currDate['mon'].$currDate['mday'],$_POST['input_text'],$_POST['input_score']);
+    $success = addReviewToRest($dbh,$_SESSION['username'],$_POST['restid'],$currDate['year'].'-'.$currDate['mon'].'-'.$currDate['mday'],$_POST['input_text'],$_POST['input_score']);
 
     if($success == true)
         header('Location: ../restaurant.php?restid='.$_POST['restid']);
