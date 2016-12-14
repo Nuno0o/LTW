@@ -33,4 +33,18 @@ function addReviewToRest($dbh,$user,$restid,$date,$text,$score){
     return $stmt->rowCount() ? true : false;
 }
 
+function getComments($dbh,$review_id){
+    $stmt = $dbh->prepare('SELECT * FROM comments WHERE review_id = ? ORDER BY comment_date ASC');
+    $stmt->execute(array($review_id));
+
+    return $stmt->fetchAll();
+}
+
+function postComment($dbh,$user,$review_id,$comment_date,$comment_text){
+    $stmt = $dbh->prepare('INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES (?,?,?,?)');
+    $stmt->execute(array($user,$review_id,$comment_date,$comment_text));
+
+    return $stmt->rowCount() ? true : false;
+}   
+
 ?>
