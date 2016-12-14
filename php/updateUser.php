@@ -32,8 +32,7 @@
     }else $description = null;
 
     //Atualiza dados excepto pass e imagem
-    $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
-    
+    $success = updateUser($dbh,$user,$email,$name,$birth,$city,$description);
     //Se foi inserida uma imagem
     if(isset($_FILES['fileToUpload']['name']) && !empty($_FILES['fileToUpload']['name'])){
         include_once('saveImage.php');

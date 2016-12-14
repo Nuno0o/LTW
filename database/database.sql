@@ -68,24 +68,33 @@ BEGIN
 END;
 
 INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
-('user1','81dc9bdb52d04dc20036dbd8313ed055','mail1@generico.com','tobias','1996-10-28','porto','portugal','owner','ola sou o tobias'),
-('user2','81dc9bdb52d04dc20036dbd8313ed055','email2@generico.com','joao','1996-10-25','lisboa','portugal','reviewer','ola sou o joao'),
-('user3','81dc9bdb52d04dc20036dbd8313ed055','email3@generico.com','carlos','1990-10-22','porto','portugal','reviewer','ola sou o carlos'),
-('admin1','81dc9bdb52d04dc20036dbd8313ed055','email4@generico.com','admin','1990-10-21','chaves','portugal','admin','ola sou o admin');
+('Jorge77','81dc9bdb52d04dc20036dbd8313ed055','jorge77@gmail.com','Jorge','1977-10-28','Porto','Portugal','owner','Ola sou o Jorge gosto muito de peixe,venham ver o meu restaurante!'),
+('Josefin4','81dc9bdb52d04dc20036dbd8313ed055','josefina_4@gmail.com','Josefina','1992-10-25','Lisboa','Portugal','reviewer','Sou a Josefina!'),
+('Reviewz','81dc9bdb52d04dc20036dbd8313ed055','reviewzzz@hotmail.com','Carlos','1989-10-22','Porto','Portugal','reviewer','Faço reviews de muitos restaurantes em Portugal, e poucos me surpreendem.'),
+('Nunoo','81dc9bdb52d04dc20036dbd8313ed055','nunoOoO@gmail.com','Nuno','1983-10-21','Chaves','Portugal','reviewer',null),
+('Ambrosio47','81dc9bdb52d04dc20036dbd8313ed055','ambrosio@hotmail.com','Ambrosio','1947-05-21','Porto','Portugal','reviewer','Sou o Ambrosio e possuo uma vasta cadeia de restaurantes.Visite-nos um dia!');
 
 
 
 INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_price,description) VALUES
-	('user1','restaurante um',221234567,'restemail1@generico.com','rua generica 1','porto','portugal',10,'o melhor restaurante do distrito'),
-	('user1','restaurante dois',221234566,'restemail2@generico.com','rua generica 2','porto','portugal',20,'o 2 melhor restaurante do distrito'),
-	('user1','restaurante tres',221234566,'restemail2@generico.com','rua generica 3','porto','portugal',20,'o 3 melhor restaurante do distrito'),
-	('user1','restaurante quatro',221234566,'restemail2@generico.com','rua generica 4','porto','portugal',20,'o 4 melhor restaurante do distrito'),
-	('user1','restaurante cinco',221234566,'restemail2@generico.com','rua generica 5','porto','portugal',20,'o 5 melhor restaurante do distrito'),
-	('user1','restaurante seis',221234566,'restemail2@generico.com','rua generica 6','porto','portugal',20,'o 6 melhor restaurante do distrito');
+	('Ambrosio47','D. Tonho',221236543,'dtonho@gmail.com','Cais da Ribeira','Porto','Portugal',17,'Venha-nos visitar, o nosso bacalhau, cabrito, enchidos, trutas e francesinhas são do melhor!'),
+	('Ambrosio47','Restaurante Carpa',221234566,'restcarpaa@hotmail.com','Avenida da Republica','Porto','Portugal',15,null),
+	('Ambrosio47','Lisboa Marina',221234566,'lmarina@hotmail.com','Parque das nações','Lisboa','Portugal',20,'Temos os melhores cocktails!'),
+	('Ambrosio47','Casa da Comida',221234566,'casadacomida@gmail.com','Travessa das Amoreiras','Lisboa','Portugal',30,'Os melhores pratos portugueses'),
+	('Jorge77','Restaurante Avo Maria',null,null,'Cais da Ribeira','Porto','Portugal',20,'Temos do melhor peixe!');
 
-INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,'2016-08-20','muito bom sai de la bem alimentado',8);
+INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES 
+('Josefin4',5,'2016-08-25','Estava muito bom, e o ambiente era adequado aos pratos servidos, recomendo!',9),
+('Josefin4',2,'2016-08-20','Foi uma boa experiencia embora o serviço tenha demorado bastante.',5),
+('Reviewz',5,'2016-08-20','O peixe que me foi servido estava quase podre, nunca mais aqui volto.',3),
+('Reviewz',2,'2016-08-20','Estive 43 minutos à espera, e a comida que me foi servida era repugnante',2),
+('Reviewz',1,'2016-08-20','O restaurante tem uma boa vista, mas não tão boa comida',4),
+('Reviewz',4,'2016-08-20','Nada mau',6),
+('Nunoo',3,'2016-08-20','Bastante bom.',10);
 
-INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user2',1,'2016-01-28','estou de acordo com a tua opiniao caro compatriota!');
-INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user3',1,'2016-01-28','tb estou de acordo com a tua opiniao caro compatriota!');
-INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user3',1,'2016-01-28','tb tb estou de acordo com a tua opiniao caro compatriota!');
+INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES
+('Jorge77',3,'2016-08-21','Nunca foi antes reportado tal, as nossas desculpas pelo sucedido.'),
+('Ambrosio47',4,'2016-08-22','O nosso restaurante teve muitos clientes nesse dia, pelo que houve alguns descuidos.Não voltará a acontecer!'),
+('Reviewz',4,'2016-08-23','Espero que não!'),
+('Ambrosio47',7,'2016-09-23','Muito obrigado!');
 
