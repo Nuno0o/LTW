@@ -4,6 +4,7 @@
 ?>
 
 <div id="page_header">
+	<label id="website_name">DineAdvisor</label>
 	<a href="index.php">
 		<div id="stock_img"> 
 			<img src="./resources/restaurant_stock.jpg" />

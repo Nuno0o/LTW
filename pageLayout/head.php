@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="./stylesheets/profileBody.css">
 		<link rel="stylesheet" href="./stylesheets/restaurantBody.css">
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
 		<script src="script/jquery.js"></script>
 		<script src="script/script.js"></script>
 	</head>

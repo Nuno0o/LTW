@@ -8,7 +8,7 @@
 
     $user = getUser($dbh,$_GET['username']);
 
-    $self_profile = $_GET['username'] == $_SESSION['username'];
+    $self_profile = isset($_SESSION['username']) && $_GET['username'] == $_SESSION['username'];
 ?>
 
 <div id="profile_body">
