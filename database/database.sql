@@ -44,7 +44,7 @@ CREATE TABLE restaurants(
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	username VARCHAR REFERENCES account(username) NOT NULL,
+	username VARCHAR(32) REFERENCES account(username) NOT NULL,
 	review_id INTEGER REFERENCES reviews(id) NOT NULL,
 	comment_date DATETIME NOT NULL,
 	comment_text VARCHAR(1000) NOT NULL
@@ -83,5 +83,9 @@ INSERT INTO restaurants (owner_id,name,phone,email,address,city,country,average_
 	('user1','restaurante cinco',221234566,'restemail2@generico.com','rua generica 5','porto','portugal',20,'o 5 melhor restaurante do distrito'),
 	('user1','restaurante seis',221234566,'restemail2@generico.com','rua generica 6','porto','portugal',20,'o 6 melhor restaurante do distrito');
 
-INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,'2016-08-20','muito bom sai de la bem alimentadododdddddddddddddddddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddentadododddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',8);
+INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUES ('user2',1,'2016-08-20','muito bom sai de la bem alimentado',8);
+
+INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user2',1,'2016-01-28','estou de acordo com a tua opiniao caro compatriota!');
+INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user3',1,'2016-01-28','tb estou de acordo com a tua opiniao caro compatriota!');
+INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user4',1,'2016-01-28','tb tb estou de acordo com a tua opiniao caro compatriota!');
 
