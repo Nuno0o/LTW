@@ -44,9 +44,9 @@ CREATE TABLE restaurants(
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	username VARCHAR REFERENCES owners(user_id),
-	review_id INTEGER REFERENCES review,
-	comment_date DATETIME,
+	username VARCHAR REFERENCES account(username) NOT NULL,
+	review_id INTEGER REFERENCES reviews(id) NOT NULL,
+	comment_date DATETIME NOT NULL,
 	comment_text VARCHAR(1000) NOT NULL
 );
 
