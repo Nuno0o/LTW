@@ -70,9 +70,9 @@ END;
 INSERT INTO account (username,password,email,name,birth,city,country,type,description) VALUES
 ('Jorge77','81dc9bdb52d04dc20036dbd8313ed055','jorge77@gmail.com','Jorge','1977-10-28','Porto','Portugal','owner','Ola sou o Jorge gosto muito de peixe,venham ver o meu restaurante!'),
 ('Josefin4','81dc9bdb52d04dc20036dbd8313ed055','josefina_4@gmail.com','Josefina','1992-10-25','Lisboa','Portugal','reviewer','Sou a Josefina!'),
-('Reviewz','81dc9bdb52d04dc20036dbd8313ed055','reviewzzz@hotmail.com','Carlos','1989-10-22','Porto','Portugal','reviewer','Faço reviews de muitos restaurantes em Portugal, e poucos me surpreendem.'),
+('Reviewz','81dc9bdb52d04dc20036dbd8313ed055','reviewzzz@hotmail.com','Carlos','1989-10-22','Porto','Portugal','reviewer','Faco reviews de muitos restaurantes em Portugal, e poucos me surpreendem.'),
 ('Nunoo','81dc9bdb52d04dc20036dbd8313ed055','nunoOoO@gmail.com','Nuno','1983-10-21','Chaves','Portugal','reviewer',null),
-('Ambrosio47','81dc9bdb52d04dc20036dbd8313ed055','ambrosio@hotmail.com','Ambrosio','1947-05-21','Porto','Portugal','reviewer','Sou o Ambrosio e possuo uma vasta cadeia de restaurantes.Visite-nos um dia!');
+('Ambrosio47','81dc9bdb52d04dc20036dbd8313ed055','ambrosio@hotmail.com','Ambrosio','1947-05-21','Porto','Portugal','owner','Sou o Ambrosio e possuo uma vasta cadeia de restaurantes.Visite-nos um dia!');
 
 
 
@@ -94,7 +94,7 @@ INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUE
 
 INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES
 ('Jorge77',3,'2016-08-21','Nunca foi antes reportado tal, as nossas desculpas pelo sucedido.'),
-('Ambrosio47',4,'2016-08-22','O nosso restaurante teve muitos clientes nesse dia, pelo que houve alguns descuidos.Não voltara a acontecer!'),
+('Ambrosio47',4,'2016-08-22','O nosso restaurante teve muitos clientes nesse dia, pelo que houve alguns descuidos.Nao voltara a acontecer!'),
 ('Reviewz',4,'2016-08-23','Espero que nao!'),
 ('Ambrosio47',7,'2016-09-23','Muito obrigado!');
 
