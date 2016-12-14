@@ -117,9 +117,13 @@
                 $reviews = getReviews($dbh,$_GET['restid']);
                 foreach($reviews as &$review){
                     echo '<div class="searched_res">';
-                    if($userInPage)
+                    if($reviewerInPage || $ownerInPage)
                         echo '<button id="replybutton' . $review['id'] . '" class="reply_button">Reply</button>';
-                    echo '<label class="name">' . $review['username']. '</label>';
+                    
+                    $reviewUser = getUser($dbh,$review['username']);
+                    echo '<img src="resources/' . $reviewUser['image'] . '" width="40px" height="40px" style="border-radius: 50%;">';
+                    
+                    echo '<a class="name" href="profile.php?username=' . $review['username'] . '"> ' . $review['username'] . '</a>';
                     echo '<br>';
                     echo '<label class="review_rating">' . $review['score']. '</label>';
                     echo '<br>';
@@ -130,8 +134,13 @@
 					if($comments != null){
                     echo '<div class="comment">';
 						foreach($comments as $comment){
+
 							echo '<div class="searched_res" style="margin-left:2%; width: 70%;">';
-							echo '<label class="name">' . $comment['username'] . '</label>';
+
+                            $commentUser = getUser($dbh,$comment['username']);
+                            echo '<img src="resources/' . $commentUser['image'] . '" width="20px" height="20px" style="border-radius: 50%;">';
+
+							echo '<a class="name" href="profile.php?username=' . $comment['username'] . '"> ' . $comment['username'] . '</a>';
                             if($comment['username'] == $restaurant['owner_id'])
                                 echo '<font color="DeepSkyBlue">(Owner)</font>';
 							echo '<br>';

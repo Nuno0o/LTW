@@ -87,5 +87,5 @@ INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUE
 
 INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user2',1,'2016-01-28','estou de acordo com a tua opiniao caro compatriota!');
 INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user3',1,'2016-01-28','tb estou de acordo com a tua opiniao caro compatriota!');
-INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user4',1,'2016-01-28','tb tb estou de acordo com a tua opiniao caro compatriota!');
+INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES ('user3',1,'2016-01-28','tb tb estou de acordo com a tua opiniao caro compatriota!');
 

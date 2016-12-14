@@ -99,6 +99,7 @@
                         echo '<label id="profile_list_header">OWNED RESTAURANTS</label>';
                         $owned_restaurants = getRestaurantsByUser($dbh,$_GET['username']);
                         foreach($owned_restaurants as $owned_restaurant){
+
                             echo '<div class="searched_res">';
                             echo '<label class="name">' . $owned_restaurant['name'] . '</label>';
                             echo '<br>';
@@ -112,7 +113,13 @@
                         echo '<label id="profile_list_header">POSTED REVIEWS</label>';
                         $posted_reviews = getReviewsByUser($dbh,$_GET['username']);
                         foreach($posted_reviews as $posted_review){
+
+
                             echo '<div class="searched_res">';
+
+                            $reviewUser = getUser($dbh,$posted_review['username']);
+                            echo '<img src="resources/' . $reviewUser['image'] . '" width="40px" height="40px" style="border-radius: 50%;">';
+                            
                             echo '<label class="name">' . $posted_review['username']. '</label>';
                             echo '<br>';
                             echo '<label class="review_rating">' . $posted_review['score']. '</label>';
