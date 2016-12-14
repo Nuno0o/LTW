@@ -87,14 +87,14 @@ INSERT INTO reviews (username,restaurant_id,review_date,review_text,score) VALUE
 ('Josefin4',5,'2016-08-25','Estava muito bom, e o ambiente era adequado aos pratos servidos, recomendo!',9),
 ('Josefin4',2,'2016-08-20','Foi uma boa experiencia embora o serviço tenha demorado bastante.',5),
 ('Reviewz',5,'2016-08-20','O peixe que me foi servido estava quase podre, nunca mais aqui volto.',3),
-('Reviewz',2,'2016-08-20','Estive 43 minutos à espera, e a comida que me foi servida era repugnante',2),
-('Reviewz',1,'2016-08-20','O restaurante tem uma boa vista, mas não tão boa comida',4),
+('Reviewz',2,'2016-08-20','Estive 43 minutos a espera, e a comida que me foi servida era repugnante',2),
+('Reviewz',1,'2016-08-20','O restaurante tem uma boa vista, mas nao tao boa comida',4),
 ('Reviewz',4,'2016-08-20','Nada mau',6),
 ('Nunoo',3,'2016-08-20','Bastante bom.',10);
 
 INSERT INTO comments (username,review_id,comment_date,comment_text) VALUES
 ('Jorge77',3,'2016-08-21','Nunca foi antes reportado tal, as nossas desculpas pelo sucedido.'),
-('Ambrosio47',4,'2016-08-22','O nosso restaurante teve muitos clientes nesse dia, pelo que houve alguns descuidos.Não voltará a acontecer!'),
-('Reviewz',4,'2016-08-23','Espero que não!'),
+('Ambrosio47',4,'2016-08-22','O nosso restaurante teve muitos clientes nesse dia, pelo que houve alguns descuidos.Não voltara a acontecer!'),
+('Reviewz',4,'2016-08-23','Espero que nao!'),
 ('Ambrosio47',7,'2016-09-23','Muito obrigado!');
 
