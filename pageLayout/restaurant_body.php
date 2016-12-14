@@ -18,7 +18,7 @@
  
             $ownerInPage = $restaurant['owner_id'] == $user['username'];
 ?>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS-j4FHPS-fYXAUX0HbN1U1cuqXTb9YUk&callback=initMap"></script>
 <div id="profile_body">
 
 	<div id="profile_area">
