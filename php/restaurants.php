@@ -70,4 +70,27 @@ function getRestaurantFromId($dbh,$id){
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
+
+function getLuxurySelection($dbh){
+    $stmt = $dbh->prepare(
+        '
+        SELECT * FROM 
+        (
+            SELECT * FROM restaurants
+            WHERE average_score > 7
+        ) AS a
+        INNER JOIN
+        (
+            SELECT * FROM reviews,restaurants
+            WHERE reviews.restaurant_id = restaurants.id
+            GROUP BY restaurants.id
+            HAVING count(*) >= 1
+        ) AS b
+        ON a.id = b.id
+        ORDER BY average_score DESC;
+        '
+    );
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
 ?>

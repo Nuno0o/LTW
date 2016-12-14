@@ -11,10 +11,11 @@ function handleSearch(){
     $('#res_price2').on('input',doSearch);
     $('#res_locat').on('input',doSearch);
     $('#res_rat').on('input',doSearch);
+    $('#LuxuriousButton').on('click',doLuxSearch);
 }
 
 function doSearch(){
-
+    var type='normal';
     var name = $('#res_name').val();
     var min = $('#res_price2').val();
     var max = $('#res_price1').val();
@@ -29,12 +30,16 @@ function doSearch(){
     if(minr == ''){
         minr = '0';
     }
-    $.getJSON("php/search.php",{'name':name,'min':min,'max':max,'loc':loc,'minr':minr},showSearch);
+    $.getJSON("php/search.php",{'type':type,'name':name,'min':min,'max':max,'loc':loc,'minr':minr},showSearch);
+}
 
+function doLuxSearch(){
+    var type='lux';
+    $.getJSON("php/search.php",{'type':type},showSearch);
 }
 
 function showSearch(data){
-    console.log(data[0]);
+
     $("#show_restaurants").empty();
 	
 	var resultsHead = $('<p class="resultsHead">Found these restaurants for the criteria inserted:</p>');
