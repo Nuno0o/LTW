@@ -80,6 +80,10 @@ function handleReplies(){
 
 function replyArea(event){
 
+    var alreadyReplyBox = $('#reply');
+    if(alreadyReplyBox.length > 0){
+        alreadyReplyBox.remove();
+    }
     var replyButtonId = event.data.id;
     var form = $('#restaurant_reviews');
     form.prepend(
