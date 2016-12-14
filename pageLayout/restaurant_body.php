@@ -119,18 +119,20 @@
                     echo '<label class="review_date">' . $review['review_date']. '</label>';
                     echo '<br>';
                     echo '<label class="review_text">' . $review['review_text'] . '</label>';
-                    echo '<div id="comment_area">';
-                    $comments = getComments($dbh,$review['id']);
-                    foreach($comments as $comment){
-                        echo '<div class="searched_res" style="margin-left:20px;">';
-                        echo '<label class="name">' . $comment['username'] . '</label>';
-                        echo '<br>';
-                        echo '<label class="review_date">' . $comment['comment_date']. '</label>';
-                        echo '<br>';
-                        echo '<label class="review_text">' . $comment['comment_text'] . '</label>';
-                        echo '</div>';
-                    }
-                    echo '</div>';
+					$comments = getComments($dbh,$review['id']);
+					if($comments != null){
+                    echo '<div class="comment">';
+						foreach($comments as $comment){
+							echo '<div class="searched_res" style="margin-left:2%; width: 70%;">';
+							echo '<label class="name">' . $comment['username'] . '</label>';
+							echo '<br>';
+							echo '<label class="review_date">' . $comment['comment_date']. '</label>';
+							echo '<br>';
+							echo '<label class="review_text">' . $comment['comment_text'] . '</label>';
+							echo '</div>';
+						}
+						echo '</div>';
+					}
                     echo '</div>';
                 }
             ?>

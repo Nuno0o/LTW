@@ -189,3 +189,26 @@
 #post_review #input{
 	margin-left: 30%;
 }
+
+.comment{
+	margin-top: 1em;
+	max-height: 10em;
+	overflow:auto;
+	font-size: 0.8em;
+	background-color: #2a2a2a;
+	width: 80%;
+}
+
+.comment::-webkit-scrollbar {
+    width: 12px;
+}
+
+.comment::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 30px rgba(22,22,22,1); 
+    background-color:#373737;
+}
+
+.comment::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,1); 
+    background-color: #C0B283;
+}
