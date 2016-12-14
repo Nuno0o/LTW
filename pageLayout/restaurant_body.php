@@ -48,10 +48,10 @@
         </div>
          <div id= "restaurant_area">   
             <div id="restaurant_image">
-                <img src="resources/<?php echo $restaurant['image'];?>" style="width:300px;height:90%;">
+                <img src="resources/<?php echo $restaurant['image'];?>" style="width:190px;height:190px;">
             </div>
             <br>
-            <div id="google_maps_div" style="height:200px;width:200px;border: 1px solid white;padding:0;margin:0;">
+            <div id="google_maps_div" style="height:200px;width:200px;border: 1px solid white;padding:0;margin:0;text-align:left;">
             
             </div>
             <br>

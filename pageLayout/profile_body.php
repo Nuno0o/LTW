@@ -42,7 +42,7 @@
             </div>
             <div id= "account" />
                 <div id="profile_image">
-                    <img src="resources/<?php echo $user['image'];?>" style="width:300px;height:90%;">
+                    <img src="resources/<?php echo $user['image'];?>" style="width:190px;height:190px;">
                 </div>
                 <div id="account_details">
                     <div id="account_header">

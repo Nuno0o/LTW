@@ -116,6 +116,7 @@ function initMap() {
             });
           } else {
             alert('Geocode was not successful for the following reason: ' + status);
+            $('#google_maps_div').remove();
           }
         });
 }
