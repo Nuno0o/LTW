@@ -34,6 +34,7 @@
         $description = $_POST['description_input'];
     }else $description = null;
 
+    //Atualiza dados excepto imagem
     $success = updateRestaurant($dbh,$_POST['restid'],$name,$phone,$email,$price,$address,$city,$description);
     
     //Se foi inserida uma imagem
@@ -44,7 +45,7 @@
         $uploadOk = true;
         $success2 = true;
     }
-
+    //Se correu tudo bem, volta a restaurante, senão volta a edit
     if($uploadOk == true && $success == true && $success2 == true)
         header('Location: ../restaurant.php?restid='.$_POST['restid']);
     else 

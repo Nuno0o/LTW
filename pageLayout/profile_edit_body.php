@@ -1,12 +1,13 @@
+<?php
+    include_once('./php/connectdb.php');
+    include_once('./php/users.php');
+    $dbh = connectdb('./database/database.db');
+
+    $user = getUser($dbh,$_SESSION['username']);
+?>
+
 <div id="register_body">
 	<div id="register_area">
-        <?php
-            include_once('./php/connectdb.php');
-            include_once('./php/users.php');
-            $dbh = connectdb('./database/database.db');
-
-            $user = getUser($dbh,$_SESSION['username']);
-        ?>
         <form id="edit_user" enctype="multipart/form-data" action="php/updateUser.php" method="post">
                 <br><br>
                 <input id="input" name="fileToUpload" type="file">

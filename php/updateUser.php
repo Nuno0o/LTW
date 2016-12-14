@@ -31,7 +31,7 @@
         $description = $_POST['description_input'];
     }else $description = null;
 
-
+    //Atualiza dados excepto pass e imagem
     $success = updateUser($dbh,$user,$pass,$email,$name,$birth,$city,$description);
     
     //Se foi inserida uma imagem
@@ -47,6 +47,7 @@
         $success3 = updateUserPassword($dbh,$user,$pass);
     }else $success3 = true;
 
+    //Se tudo correu bem, volta ao perfil, senao volta a edit
     if($uploadOk == true && $success == true && $success2 == true && $success3 == true)
         header('Location: ../profile.php?username='.$user);
     else 

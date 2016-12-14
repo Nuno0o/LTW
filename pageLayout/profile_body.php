@@ -1,3 +1,16 @@
+<?php
+    include_once('./php/connectdb.php');
+    include_once('./php/users.php');
+    include_once('./php/restaurants.php');
+    include_once('./php/reviews.php');
+
+    $dbh = connectdb('./database/database.db');
+
+    $user = getUser($dbh,$_GET['username']);
+
+    $self_profile = $_GET['username'] == $_SESSION['username'];
+?>
+
 <div id="profile_body">
 	<div id="profile_area">
         <br>
@@ -8,18 +21,8 @@
 		    </form>
         </div>
         <?php 
-            include_once('./php/connectdb.php');
-            include_once('./php/users.php');
-            include_once('./php/restaurants.php');
-            include_once('./php/reviews.php');
-
-            $dbh = connectdb('./database/database.db');
-
-            $user = getUser($dbh,$_GET['username']);
-
             if($user == null){
-                echo '<div id="not_found">User not found</div>';
-                
+                echo '<div id="not_found">User not found</div>';         
             }else{
         ?>
         <div id = "details_area">
@@ -28,7 +31,7 @@
                     <?php echo '@'.$user['username'];?>
                 </div>
                 <?php
-                if($_GET['username'] == $_SESSION['username']){?>
+                if($self_profile){?>
                     <div id="user_edit_profile_btn">
                     <a id="edit_profile_btn" href="profile_edit.php" > &nbspEdit Profile&nbsp </a>
                     <?php if($user['type'] == 'owner'){ ?>
@@ -91,6 +94,7 @@
             </div>
             <div id="owned_or_reviews">
                 <?php
+                    //Se o utilizador for um owner, imprime todos os seus restaurantes, caso seja um reviewer, imprime todos os seus reviews
                     if($user['type'] == 'owner'){
                         echo '<label id="profile_list_header">OWNED RESTAURANTS</label>';
                         $owned_restaurants = getRestaurantsByUser($dbh,$_GET['username']);

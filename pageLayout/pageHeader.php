@@ -1,3 +1,8 @@
+<?php
+	$user_logged = isset($_SESSION['username']);
+	$invalid_password = isset($_GET['invalidacc']);
+?>
+
 <div id="page_header">
 	<a href="index.php">
 		<div id="stock_img"> 
@@ -5,7 +10,7 @@
 		</div>
 	</a>
 	<div id="login_area">
-		<?php if(!isset($_SESSION['username'])):?>
+		<?php if(!$user_logged):?>
 		<form action="php/login.php" method="post">
 			<div id="usernameThings" />
 				<label id="username_label">Username</label>
@@ -15,7 +20,7 @@
 				<label id="password_label">Password</label>
 				<input id="password_input" name="password_input" type="password" required>
 			</div>
-			<?php if(isset($_GET['invalidacc'])): ?>
+			<?php if($invalid_password): ?>
 			<label id="incorrect">Incorrect username/password</label><br>
 			<?php endif;?>
 			<input id="login_btn" type="submit" value="Login">

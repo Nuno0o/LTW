@@ -19,27 +19,11 @@
         return $stmt->execute(array(md5($password),$user));
     }
 
-
-
     function getUser($dbh,$user){
         $stmt = $dbh->prepare('SELECT * FROM account WHERE username = ?');
         $stmt->execute(array($user));
 
         return $stmt->fetch();
-    }
-
-    function changeUserPassword($dbh,$user,$password){
-        $stmt = $dbh->prepare('UPDATE account SET password = ? WHERE username = ?');
-        $stmt->execute(array(md5($password),$user));
-
-        return $stmt->rowCount() ? true : false;
-    }
-
-    function changeUserEmail($dbh,$user,$email){
-        $stmt = $dbh->prepare('UPDATE account SET email = ? WHERE username = ?');
-        $stmt->execute(array($email,$user));
-
-        return $stmt->rowCount() ? true : false;
     }
 
     function searchUsers($dbh,$string){

@@ -1,7 +1,4 @@
-<div id="profile_body">
-	<div id="profile_area">
-
-        <?php 
+<?php 
             include_once('./php/connectdb.php');
             include_once('./php/users.php');
             include_once('./php/restaurants.php');
@@ -13,14 +10,15 @@
 
             $user = getUser($dbh,$_SESSION['username']);
 
-            if($user != null && $user['type'] == 'reviewer'){
-                $reviewerInPage = true;
-            }else $reviewerInPage = false;
+            $reviewerInPage = $user != null && $user['type'] == 'reviewer';
+ 
+            $ownerInPage = $restaurant['owner_id'] == $_SESSION['username'];
+?>
 
-            if($restaurant['owner_id'] == $_SESSION['username']){
-                $ownerInPage = true;
-            }else $ownerInPage = false;
+<div id="profile_body">
+	<div id="profile_area">
 
+        <?php 
             if($restaurant == null){
                 echo '<div id="not_found">Restaurant not found</div>';  
             }else{
@@ -31,9 +29,8 @@
                 <?php echo $restaurant['name'];?>
             </div>
             <?php
-                if(isset($_SESSION['username'])){
                 if($ownerInPage){
-                ?>
+            ?>
                     <form action="php/deleteRest.php" method="post" style="float:right;">
                         <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 
                         <input id="edit_profile_btn" type="submit" value=" Delete " onclick="if (!confirm('Are you sure?')) return false;"> 
@@ -41,7 +38,7 @@
                     <div id="restaurant_edit_btn">
                         <a href="restaurant_edit.php?restid=<?php echo $restaurant['id']; ?>" id="edit_profile_btn"> &nbspEdit Restaurant&nbsp </a>
                     </div>
-            <?php }} ?>
+            <?php } ?>
         </div>
          <div id= "restaurant_area">   
             <div id="restaurant_image">
@@ -99,7 +96,7 @@
         <div id="restaurant_reviews">
             
             <?php
-            if($reviewerInPage == true){ ?>
+            if($reviewerInPage){ ?>
             <form id="post_review" action="php/addReview.php" method="post">
                 <label>Post a review</label>
                 <input type='hidden' name='restid' value="<?php echo $restaurant['id'];?>"/> 

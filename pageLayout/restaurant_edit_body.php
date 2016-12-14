@@ -1,6 +1,4 @@
-<div id="register_body">
-	<div id="register_area">
-        <?php
+<?php
             include_once('./php/connectdb.php');
             include_once('./php/users.php');
             include_once('./php/restaurants.php');
@@ -8,6 +6,11 @@
 
             $restaurant = getRestaurantFromId($dbh,$_GET['restid']);
 
+?>
+
+<div id="register_body">
+	<div id="register_area">
+        <?php
             if($restaurant == null){
                 echo '<div id="not_found">Restaurant not found</div>';  
             }else if(isset($_SESSION['username']) && $restaurant['owner_id'] != $_SESSION['username']){
