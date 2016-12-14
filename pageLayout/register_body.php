@@ -1,12 +1,17 @@
+<?php
+    $username_used = isset($_GET['errres']) && $_GET['errres'] == 1;
+    $short_password = isset($_GET['errres']) && $_GET['errres'] == 2;
+?>
+
 <div id="register_body">
 	<div id="register_area">
         <form action="php/register.php" method="post">
                 <br><br>
 				<label >Username</label>
-				<input id="input" name="username_input" type="text" required>
+				<input id="input" name="username_input" type="text" required><?php if($username_used) echo '<label class="incorrect">Username in use</label>'; ?>
                 <br><br>
                 <label >Password</label>
-				<input id="input" name="password_input" type="password" required>
+				<input id="input" name="password_input" type="password" required><?php if($short_password) echo '<label class="incorrect">Password too short</label>'; ?>
                 <br><br>
                 <label >Email</label>
 				<input id="input" name="email_input" type="text">

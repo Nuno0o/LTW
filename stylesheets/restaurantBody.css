@@ -77,6 +77,14 @@
 #restaurant_phone{
 	color: #DCD0C0;
 }
+#restaurant_owner:before{
+	color: #C0B283;
+	content:'Owner: ';
+	font-size:1.2em;
+}
+#restaurant_owner{
+	color: #DCD0C0;
+}
 
 #restaurant_email:before{
 	color: #C0B283;

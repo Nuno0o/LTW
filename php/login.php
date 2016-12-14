@@ -18,6 +18,6 @@
     if($retrieved_user['password'] === $hashed_pass){
         $_SESSION['username'] = $user;
         header('Location: ../index.php');
-    }else header('Location: ../index.php?invalidacc=1');
+    }else header('Location: ../index.php?errlog=1');
     exit();
 ?>

@@ -1,6 +1,6 @@
 <?php
 	$user_logged = isset($_SESSION['username']);
-	$invalid_password = isset($_GET['invalidacc']);
+	$invalid_password = isset($_GET['errlog']) && $_GET['errlog'] == 1;
 ?>
 
 <div id="page_header">
@@ -20,9 +20,9 @@
 				<label id="password_label">Password</label>
 				<input id="password_input" name="password_input" type="password" required>
 			</div>
-			<?php if($invalid_password): ?>
-			<label id="incorrect">Incorrect username/password</label><br>
-			<?php endif;?>
+			<?php if($invalid_password): 
+			echo '<label class="incorrect">Incorrect username/password</label><br>';
+			endif;?>
 			<input id="login_btn" type="submit" value="Login">
 		</form>
 		<input id="register_btn" type="button" onclick="window.location = 'register.php';" value="Register">

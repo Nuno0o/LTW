@@ -40,7 +40,7 @@ input:focus{
 	outline:none;
 }
 
-#incorrect{
+.incorrect{
 	color:red;
 }
 

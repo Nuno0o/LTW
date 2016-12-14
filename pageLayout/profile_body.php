@@ -101,12 +101,12 @@
                         foreach($owned_restaurants as $owned_restaurant){
 
                             echo '<div class="searched_res">';
+                            echo '<a class="resultAnchor" href="restaurant.php?restid=' . $owned_restaurant['id'] .'">Go to restaurant </a>';
                             echo '<label class="name">' . $owned_restaurant['name'] . '</label>';
                             echo '<br>';
                             echo '<label class="rating">' . $owned_restaurant['average_score'] . '</label>';
                             echo '<br>';
                             echo '<label class="address">' . $owned_restaurant['address'] . ', '. $owned_restaurant['city'] . ', ' . $owned_restaurant['country'] . '</label>';
-                            echo '<a class="resultAnchor" href="restaurant.php?restid=' . $owned_restaurant['id'] .'">Go to restaurant </a>';
                             echo '</div>';
                         }
                     }else{
@@ -116,6 +116,8 @@
 
 
                             echo '<div class="searched_res">';
+
+                            echo '<a class="resultAnchor" href="restaurant.php?restid=' . $posted_review['restaurant_id'] .'">Go to restaurant </a>';
 
                             $reviewUser = getUser($dbh,$posted_review['username']);
                             echo '<img src="resources/' . $reviewUser['image'] . '" width="40px" height="40px" style="border-radius: 50%;">';
@@ -127,7 +129,6 @@
                             echo '<label class="review_date">' . $posted_review['review_date']. '</label>';
                             echo '<br>';
                             echo '<label class="review_text">' . $posted_review['review_text'] . '</label>';
-                            echo '<a class="resultAnchor" href="restaurant.php?restid=' . $posted_review['restaurant_id'] .'">Go to restaurant </a>';
                             echo '</div>';
                         }
                     }

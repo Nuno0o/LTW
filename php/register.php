@@ -5,13 +5,14 @@
     
     $dbh = connectdb('../database/database.db');
     
-    if(isset($_POST['username_input'])){
-        $user = $_POST['username_input'];
-    }else header('Location: ../register.php');
+    $user = $_POST['username_input'];
     
-    if(isset($_POST['password_input'])){
-        $pass = $_POST['password_input'];
-    }else header('Location: ../register.php');
+    $pass = $_POST['password_input'];
+
+    if(strlen($pass) <  5){
+        header('Location: ../register.php?errres=2');
+        exit();
+    }
 
     if(isset($_POST['type_input'])){
         $type = $_POST['type_input'];
@@ -38,8 +39,9 @@
     }else $country = null;
 
     $success = newUser($dbh,$user,$pass,$email,$name,$birth,$city,$country,$type);
+
     if($success == true)
         header('Location: ../index.php');
-    else header('Location: ../register.php');
+    else header('Location: ../register.php?errres=1');
     exit();
 ?>

@@ -20,7 +20,9 @@
 ?>
 
 <div id="profile_body">
+
 	<div id="profile_area">
+        <!-- Perfil do restaurante -->
 
         <?php 
             if($restaurant == null){
@@ -54,6 +56,8 @@
                 </div>
                 <div id="restaurant_contact">
                     <?php 
+                        echo '<a id="restaurant_owner" href="profile.php?username=' . $restaurant['owner_id'] .'">'. $restaurant['owner_id'] . '</a>';
+                        echo '<br>';
                         if($restaurant['phone'] != null)
                             echo '<label id="restaurant_phone">'.$restaurant['phone']."</label>";
                         if($restaurant['email'] != null && $restaurant['phone'] != null)
@@ -97,6 +101,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- Reviews do restaurante -->
+
         <div id="restaurant_reviews">
             <?php
             if($reviewerInPage){ ?>
