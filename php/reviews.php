@@ -6,7 +6,7 @@ function getReviews($dbh,$restaurant){
         SELECT *
         FROM reviews WHERE
         restaurant_id = ?
-        ORDER BY review_date ASC
+        ORDER BY review_date DESC
         '
     );
     $stmt->execute(array($restaurant));
