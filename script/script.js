@@ -84,6 +84,10 @@ function replyArea(event){
     if(alreadyReplyBox.length > 0){
         alreadyReplyBox.remove();
     }
+    var reviewInScreen = $('#post_review');
+    if(reviewInScreen.length > 0){
+        reviewInScreen.remove();
+    }
     var replyButtonId = event.data.id;
     var form = $('#restaurant_reviews');
     form.prepend(

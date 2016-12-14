@@ -132,6 +132,8 @@
 						foreach($comments as $comment){
 							echo '<div class="searched_res" style="margin-left:2%; width: 70%;">';
 							echo '<label class="name">' . $comment['username'] . '</label>';
+                            if($comment['username'] == $restaurant['owner_id'])
+                                echo '<font color="DeepSkyBlue">(Owner)</font>';
 							echo '<br>';
 							echo '<label class="review_date">' . $comment['comment_date']. '</label>';
 							echo '<br>';
