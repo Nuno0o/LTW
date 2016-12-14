@@ -8,11 +8,15 @@
 
             $restaurant = getRestaurantFromId($dbh,$_GET['restid']);
 
-            $user = getUser($dbh,$_SESSION['username']);
+            if(isset($_SESSION['username']))
+                $user = getUser($dbh,$_SESSION['username']);
+            else $user = null;
+
+            $userInPage = isset($_SESSION['username']);
 
             $reviewerInPage = $user != null && $user['type'] == 'reviewer';
  
-            $ownerInPage = $restaurant['owner_id'] == $_SESSION['username'];
+            $ownerInPage = $restaurant['owner_id'] == $user['username'];
 ?>
 
 <div id="profile_body">
@@ -94,7 +98,6 @@
             </div>
         </div>
         <div id="restaurant_reviews">
-            
             <?php
             if($reviewerInPage){ ?>
             <form id="post_review" action="php/addReview.php" method="post">
@@ -105,6 +108,8 @@
                 <input type="submit" value=" Send " id="edit_profile_btn"> 
             </form>
             <?php } ?>
+
+            
             
             
             <?php
@@ -112,6 +117,8 @@
                 $reviews = getReviews($dbh,$_GET['restid']);
                 foreach($reviews as &$review){
                     echo '<div class="searched_res">';
+                    if($userInPage)
+                        echo '<button id="replybutton' . $review['id'] . '" class="reply_button">Reply</button>';
                     echo '<label class="name">' . $review['username']. '</label>';
                     echo '<br>';
                     echo '<label class="review_rating">' . $review['score']. '</label>';

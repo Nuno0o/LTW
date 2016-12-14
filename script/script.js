@@ -3,6 +3,8 @@ $(setUp);
 function setUp(){
     if($('#main_body').length == 1)
         handleSearch();
+    //Handle reply button in restaurant
+    handleReplies();
 }
 
 function handleSearch(){
@@ -66,4 +68,25 @@ function lineReceived(index, value) {
   line.append(container);
   $("#show_restaurants").append(line);
 
+}
+
+function handleReplies(){
+    var replyButtons = $('.reply_button');
+    replyButtons.each(function(index){
+        var numID = $(this).attr('id').replace( /^\D+/g, '');
+        $(this).click({id:numID},replyArea);
+    });
+}
+
+function replyArea(event){
+
+    var replyButtonId = event.data.id;
+    var form = $('#restaurant_reviews');
+    form.prepend(
+        '<form id="reply" action="php/addComment.php" method="post">'+
+                '<label>Reply: </label><br>'+
+                '<input type= \'hidden\' name= \'reviewid\' value="'+ replyButtonId + '"/>'+
+                '<textarea id="description_area" rows="4" cols="45" name="input_text" form="reply" required></textarea><br>'+
+                '<input type="submit" value=" Send " id="edit_profile_btn">'+
+            '</form>');
 }

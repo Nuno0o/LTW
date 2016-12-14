@@ -13,6 +13,13 @@ function getReviews($dbh,$restaurant){
     return $stmt->fetchAll();
 }
 
+function getReview($dbh,$reviewid){
+    $stmt = $dbh->prepare('SELECT * FROM reviews WHERE id = ?');
+    $stmt->execute(array($reviewid));
+
+    return $stmt->fetch();
+}
+
 function getReviewsByUser($dbh,$user){
     $stmt = $dbh->prepare(
         '
@@ -45,6 +52,6 @@ function postComment($dbh,$user,$review_id,$comment_date,$comment_text){
     $stmt->execute(array($user,$review_id,$comment_date,$comment_text));
 
     return $stmt->rowCount() ? true : false;
-}   
+} 
 
 ?>
