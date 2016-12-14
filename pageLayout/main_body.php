@@ -25,23 +25,6 @@
 				</li>
 			</ul>
 		</div>
-		<div id="altSearchingDiv">
-			<p id="altSearchingP">Or look by our selections, instead. </p>
-			<ul>
-				<li id="mostPopularDiv">
-					<input id="MostPopularButton" type="submit" value="Most Popular" >
-				</li>
-				<li id="cheapestDiv">
-					<input id="CheapestButton" type="submit" value="Cheapest" >
-				</li>
-				<li id="luxuriousDiv">
-					<input id="LuxuriousButton" type="submit" value="Our Luxury Selection" >
-				</li>
-				<li id="newestDiv">
-					<input id="NewestButton" type="submit" value="Newly Added" >
-				</li>
-			</ul>
- 		</div>
 	</div>
 	<div id="show_restaurants" >
 		<p id="welcome">Welcome to this restaurant reviews database. To start searching, type your criteria on the left. You can also look through our selections, too.</p>

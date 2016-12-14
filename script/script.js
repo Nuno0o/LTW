@@ -13,7 +13,6 @@ function handleSearch(){
     $('#res_price2').on('input',doSearch);
     $('#res_locat').on('input',doSearch);
     $('#res_rat').on('input',doSearch);
-    $('#LuxuriousButton').on('click',doLuxSearch);
 }
 
 function doSearch(){
@@ -33,11 +32,6 @@ function doSearch(){
         minr = '0';
     }
     $.getJSON("php/search.php",{'type':type,'name':name,'min':min,'max':max,'loc':loc,'minr':minr},showSearch);
-}
-
-function doLuxSearch(){
-    var type='lux';
-    $.getJSON("php/search.php",{'type':type},showSearch);
 }
 
 function showSearch(data){
